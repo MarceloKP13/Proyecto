@@ -39,7 +39,7 @@
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
                                 <span class="admin-badge">Admin</span>
                             <?php endif; ?>
-                            <a href="php/auth/salir.php">Cerrar Sesión</a>
+                            <a href="php/auth/salir.php">|  |   Cerrar Sesión</a>
                         </li>
                     <?php else: ?>
                         <li><a href="php/auth/login_registro_global.php">Iniciar Sesión</a></li>
