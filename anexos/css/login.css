@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    font-family: "Roboto", serif;
 }
 
 body {
@@ -71,7 +70,6 @@ main {
     color: #353030;
 }
 
-/*Formulario*/
 .contenedor__login-register{
     display: flex;
     align-items: center;
@@ -105,7 +103,7 @@ main {
     background: #f2f2f2;
     font-size: 16px;
     outline: none;
-    display: block; /* Asegura que no afecte otros elementos */
+    display: block;
 }
 
 .contenedor__login-register form button{
@@ -162,4 +160,30 @@ main {
 
 #admin_pin_div {
     margin-top: 0;
+}
+@media screen and (max-width: 850px) {
+    main{
+        margin-top: 50px;
+    }
+    .caja__trasera{
+        max-width: 350px;
+        height: 300px;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .caja__trasera div{
+        margin: 0;
+        position: absolute;
+    }
+
+    .contenedor__login-register{
+        top: -10px;
+        left: -5px;
+        margin: auto;
+    }
+
+    .contenedor__login-register form{
+        position: relative;
+    }
 }
