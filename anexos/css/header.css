@@ -211,9 +211,10 @@ footer {
 }
 
 .social-icons a img {
-    width: 20px;
-    height: 20px;
-    transition: opacity 0.3s;
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.5s;
+    border-radius: 50%;
 }
 
 .social-icons a:hover img {
