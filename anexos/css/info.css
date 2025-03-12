@@ -1,0 +1,185 @@
+/* Estilos para la página Sobre Nosotros */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.about-container {
+    margin-top: 70px;
+}
+
+.hero-section {
+    background-image: url('../imagenes/about-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.story-section, .values-section {
+    display: flex;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.story-content, .values-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.story-image, .values-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.story-image img, .values-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.story-content h2, .values-content h2, .process-section h2, .future-section h2 {
+    color: #660030;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.story-content p, .future-section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.process-section {
+    background-color: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.process-steps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-step {
+    flex: 1;
+    min-width: 250px;
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+}
+
+.step-icon {
+    font-size:
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #660030;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+
+.step-icon i {
+    font-size: 2rem;
+}
+
+.process-step h3 {
+    margin-bottom: 10px;
+    color: #660030;
+}
+
+.process-step p {
+    color: #666;
+}
+
+.value-item {
+    margin-bottom: 25px;
+}
+
+.value-item h3 {
+    color: #660030;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.value-item p {
+    margin: 0;
+    color: #666;
+}
+
+.future-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px 60px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .story-section, .values-section {
+        flex-direction: column;
+    }
+    
+    .values-section {
+        flex-direction: column-reverse;
+    }
+    
+    .process-step {
+        min-width: 200px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+}
