@@ -1,52 +1,10 @@
 <?php
 session_start();
-
-// Aquí conectarías con tu base de datos para obtener productos
-// Simularemos productos para este ejemplo
-$productos = [
-    [
-        'id' => 1,
-        'nombre' => 'Vino Tinto Reserva',
-        'descripcion' => 'Vino tinto con notas de frutas rojas y un toque de roble. Ideal para acompañar carnes rojas y quesos maduros.',
-        'precio' => 15.99,
-        'imagen' => '../anexos/imagenes/vino1.jpg',
-        'maridaje' => 'Carnes rojas, quesos maduros, chocolate negro'
-    ],
-    [
-        'id' => 2,
-        'nombre' => 'Vino Blanco Chardonnay',
-        'descripcion' => 'Vino blanco fresco y afrutado con notas cítricas y de manzana verde. Perfecto para pescados y mariscos.',
-        'precio' => 12.99,
-        'imagen' => '../anexos/imagenes/vino2.jpg',
-        'maridaje' => 'Pescados, mariscos, ensaladas, quesos suaves'
-    ],
-    [
-        'id' => 3,
-        'nombre' => 'Vino Rosado',
-        'descripcion' => 'Rosado equilibrado con aromas de frutos rojos y flores. Versátil para diferentes platos.',
-        'precio' => 13.50,
-        'imagen' => '../anexos/imagenes/vino3.jpg',
-        'maridaje' => 'Paella, pizza, pasta, tapas variadas'
-    ],
-    [
-        'id' => 4,
-        'nombre' => 'Vino Espumoso',
-        'descripcion' => 'Espumoso elegante con burbujas finas y persistentes. Ideal para celebraciones y aperitivos.',
-        'precio' => 18.75,
-        'imagen' => '../anexos/imagenes/vino4.jpg',
-        'maridaje' => 'Aperitivos, postres, mariscos'
-    ],
-    [
-        'id' => 5,
-        'nombre' => 'Vino Dulce Moscatel',
-        'descripcion' => 'Vino dulce aromático con notas de miel y frutas pasas. Perfecto para postres.',
-        'precio' => 14.25,
-        'imagen' => '../anexos/imagenes/vino5.jpg',
-        'maridaje' => 'Postres, quesos azules, foie gras'
-    ]
-];
+include 'auth/conexion_be.php';
+// Obtener la lista de productos de la base de datos
+$result = mysqli_query($conexion, "SELECT * FROM productos");
+$productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -66,13 +24,11 @@ $productos = [
                 <img src="../anexos/imagenes/havcanalogo.png" alt="HAVCANA Logo">
                 <a href="info.php" class="brand-name">HAVCANA</a>
             </div>
-
             <button class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-
             <nav>
                 <ul class="nav-menu">
                     <li><a href="../index.php">Inicio</a></li>
@@ -95,7 +51,6 @@ $productos = [
             </nav>
         </div>
     </header>
-
     <main class="catalog-container">
         <h1>Nuestros Vinos</h1>
         <p class="catalog-intro">Descubre nuestra selección de vinos artesanales elaborados con pasión y dedicación. Cada botella representa nuestra búsqueda por la excelencia y el sabor auténtico.</p>
@@ -126,9 +81,7 @@ $productos = [
                                     <?php endfor; ?>
                                 </select>
                             </div>
-                            <button type="submit" class="add-to-cart-btn">
-                                <i class="fas fa-shopping-cart"></i> Añadir al carrito
-                            </button>
+                            <button type="submit" class="add-to-cart-btn">Agregar al Carrito</button>
                         </div>
                     </form>
                 </div>
@@ -136,7 +89,6 @@ $productos = [
             <?php endforeach; ?>
         </div>
     </main>
-
     <footer>
         <div class="whatsapp-button">
             <a href="https://wa.me/593968403024" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
@@ -145,7 +97,6 @@ $productos = [
             </a>
         </div>
     </footer>
-
     <script src="../anexos/js/menu.js"></script>
 </body>
 </html>
