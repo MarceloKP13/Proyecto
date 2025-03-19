@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
                     <li><a href="contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
-                            <span>Hola, <?php echo $_SESSION['usuario']; ?></span>
+                            <a href="perfil.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
                                 <span class="admin-badge">Admin</span>
                             <?php endif; ?>
