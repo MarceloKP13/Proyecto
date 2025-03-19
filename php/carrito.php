@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
         $stmt->bind_param("i", $producto_id);
         $stmt->execute();
         $result = $stmt->get_result();
-        
+
         if ($producto = $result->fetch_assoc()) {
             // Calcular precio según cantidad (precio especial por docena)
             $precio_unitario = $producto['precio'];
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
                     $nuevo_precio = ($nueva_cantidad >= 12) ? 
                         (strpos(strtolower($producto['nombre']), 'manzana') !== false ? 3.85 : 7.75) :
                         $producto['precio'];
-                    
+
                     $_SESSION['carrito'][$index]['cantidad'] = $nueva_cantidad;
                     $_SESSION['carrito'][$index]['precio'] = $nuevo_precio;
                     $existe = true;
@@ -142,7 +142,7 @@ $total = $subtotal + $envio;
                     <li><a href="contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
-                            <a href="perfil.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
+                            <a href="auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
                                 <span class="admin-badge">Admin</span>
                             <?php endif; ?>
@@ -158,7 +158,7 @@ $total = $subtotal + $envio;
 
     <main class="cart-container">
         <h1>Tu Carrito de Compras</h1>
-        
+
         <?php if (empty($_SESSION['carrito'])): ?>
         <div class="empty-cart">
             <i class="fas fa-shopping-cart"></i>
@@ -216,7 +216,7 @@ $total = $subtotal + $envio;
                         <?php endforeach; ?>
                     </tbody>
                 </table>
-                
+
                 <div class="cart-actions">
                     <a href="catalogo.php" class="continue-shopping">
                         <i class="fas fa-arrow-left"></i> Seguir comprando
@@ -229,7 +229,7 @@ $total = $subtotal + $envio;
                     </form>
                 </div>
             </div>
-            
+
             <div class="cart-summary">
                 <h2>Resumen del pedido</h2>
                 <div class="summary-row">

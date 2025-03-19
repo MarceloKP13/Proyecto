@@ -36,7 +36,7 @@
                     <li><a href="php/contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
-                            <a href="php/perfil.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
+                            <a href="php/auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
                                 <span class="admin-badge">Admin</span>
                             <?php endif; ?>
