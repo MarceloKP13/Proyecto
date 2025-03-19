@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'auth/conexion_be.php';
 
 // Inicializar el carrito si no existe
 if (!isset($_SESSION['carrito'])) {
@@ -8,40 +9,49 @@ if (!isset($_SESSION['carrito'])) {
 
 // Procesar acciones del carrito
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
-    // Buscar info del producto (en un sistema real, esto vendría de la base de datos)
-    $productos = [
-        1 => ['id' => 1, 'nombre' => 'Vino Tinto Reserva', 'precio' => 15.99],
-        2 => ['id' => 2, 'nombre' => 'Vino Blanco Chardonnay', 'precio' => 12.99],
-        3 => ['id' => 3, 'nombre' => 'Vino Rosado', 'precio' => 13.50],
-        4 => ['id' => 4, 'nombre' => 'Vino Espumoso', 'precio' => 18.75],
-        5 => ['id' => 5, 'nombre' => 'Vino Dulce Moscatel', 'precio' => 14.25]
-    ];
-
     $accion = $_POST['accion'];
 
     if ($accion === 'agregar' && isset($_POST['producto_id']) && isset($_POST['cantidad'])) {
         $producto_id = (int)$_POST['producto_id'];
         $cantidad = (int)$_POST['cantidad'];
 
-        if (isset($productos[$producto_id])) {
-            $producto = $productos[$producto_id];
+        // Obtener información del producto de la base de datos
+        $query = "SELECT * FROM productos WHERE id = ?";
+        $stmt = $conexion->prepare($query);
+        $stmt->bind_param("i", $producto_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        
+        if ($producto = $result->fetch_assoc()) {
+            // Calcular precio según cantidad (precio especial por docena)
+            $precio_unitario = $producto['precio'];
+            if ($cantidad >= 12) {
+                // Aplicar descuento por docena
+                $precio_unitario = strpos(strtolower($producto['nombre']), 'manzana') !== false ? 3.85 : 7.75;
+            }
 
-            // Verificar si ya existe en el carrito y actualizar cantidad
+            // Verificar si ya existe en el carrito
             $existe = false;
             foreach ($_SESSION['carrito'] as $index => $item) {
                 if ($item['id'] === $producto_id) {
-                    $_SESSION['carrito'][$index]['cantidad'] += $cantidad;
+                    // Actualizar cantidad y recalcular precio si es necesario
+                    $nueva_cantidad = $item['cantidad'] + $cantidad;
+                    $nuevo_precio = ($nueva_cantidad >= 12) ? 
+                        (strpos(strtolower($producto['nombre']), 'manzana') !== false ? 3.85 : 7.75) :
+                        $producto['precio'];
+                    
+                    $_SESSION['carrito'][$index]['cantidad'] = $nueva_cantidad;
+                    $_SESSION['carrito'][$index]['precio'] = $nuevo_precio;
                     $existe = true;
                     break;
                 }
             }
 
-            // Si no existe, añadir al carrito
             if (!$existe) {
                 $_SESSION['carrito'][] = [
                     'id' => $producto_id,
                     'nombre' => $producto['nombre'],
-                    'precio' => $producto['precio'],
+                    'precio' => $precio_unitario,
                     'cantidad' => $cantidad
                 ];
             }
@@ -52,9 +62,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
 
         if (isset($_SESSION['carrito'][$index])) {
             if ($cantidad > 0) {
+                // Recalcular precio según nueva cantidad
+                $producto_id = $_SESSION['carrito'][$index]['id'];
+                $query = "SELECT * FROM productos WHERE id = ?";
+                $stmt = $conexion->prepare($query);
+                $stmt->bind_param("i", $producto_id);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $producto = $result->fetch_assoc();
+
+                $nuevo_precio = $producto['precio'];
+                if ($cantidad >= 12) {
+                    $nuevo_precio = strpos(strtolower($producto['nombre']), 'manzana') !== false ? 3.85 : 7.75;
+                }
+
                 $_SESSION['carrito'][$index]['cantidad'] = $cantidad;
+                $_SESSION['carrito'][$index]['precio'] = $nuevo_precio;
             } else {
-                // Eliminar si cantidad es 0
                 array_splice($_SESSION['carrito'], $index, 1);
             }
         }
@@ -67,14 +91,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['accion'])) {
         $_SESSION['carrito'] = [];
     }
 
-    // Redirigir para evitar reenvío de formulario
     header('Location: carrito.php');
     exit;
 }
 
 // Calcular totales
 $subtotal = 0;
-$envio = 5.00; // Costo fijo de envío
+$envio = 5.00;
 $total = 0;
 
 foreach ($_SESSION['carrito'] as $item) {
@@ -149,7 +172,7 @@ $total = $subtotal + $envio;
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th>Precio</th>
+                            <th>Precio Unitario</th>
                             <th>Cantidad</th>
                             <th>Subtotal</th>
                             <th>Acciones</th>
@@ -158,16 +181,22 @@ $total = $subtotal + $envio;
                     <tbody>
                         <?php foreach ($_SESSION['carrito'] as $index => $item): ?>
                         <tr>
-                            <td class="product-name"><?php echo $item['nombre']; ?></td>
+                            <td class="product-name">
+                                <?php echo $item['nombre']; ?>
+                                <?php if ($item['cantidad'] >= 12): ?>
+                                    <span class="discount-badge">¡Precio especial por docena!</span>
+                                <?php endif; ?>
+                            </td>
                             <td class="product-price">$<?php echo number_format($item['precio'], 2); ?></td>
                             <td class="product-quantity">
                                 <form action="carrito.php" method="POST" class="quantity-form">
                                     <input type="hidden" name="accion" value="actualizar">
                                     <input type="hidden" name="item_index" value="<?php echo $index; ?>">
                                     <select name="cantidad" onchange="this.form.submit()">
-                                        <?php for($i = 1; $i <= 10; $i++): ?>
+                                        <?php for($i = 1; $i <= 24; $i++): ?>
                                             <option value="<?php echo $i; ?>" <?php echo ($i == $item['cantidad']) ? 'selected' : ''; ?>>
                                                 <?php echo $i; ?>
+                                                <?php if($i == 12): ?> (Docena)<?php endif; ?>
                                             </option>
                                         <?php endfor; ?>
                                     </select>
@@ -215,9 +244,20 @@ $total = $subtotal + $envio;
                     <span>Total</span>
                     <span>$<?php echo number_format($total, 2); ?></span>
                 </div>
-                <button class="checkout-btn">
-                    Proceder al pago <i class="fas fa-arrow-right"></i>
+                <button class="checkout-btn" onclick="generarPedido()">
+                    Generar Pedido <i class="fas fa-arrow-right"></i>
                 </button>
+                <script>
+                function generarPedido() {
+                    <?php if(!isset($_SESSION['usuario'])): ?>
+                        if(confirm('Debe iniciar sesión para generar un pedido. ¿Desea ir a la página de inicio de sesión?')) {
+                            window.location.href = 'auth/login_registro_global.php';
+                        }
+                    <?php else: ?>
+                        window.location.href = 'auth_pro/pedido.php';
+                    <?php endif; ?>
+                }
+                </script>
             </div>
         </div>
         <?php endif; ?>

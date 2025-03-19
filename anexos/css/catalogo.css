@@ -165,3 +165,31 @@ body {
         font-size: 1.3rem;
     }
 }
+.admin-edit-form input[type="text"],
+.admin-edit-form input[type="number"],
+.admin-edit-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.admin-edit-form textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.admin-save-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.admin-save-btn:hover {
+    background-color: #218838;
+}

@@ -1,3 +1,15 @@
+.price-type {
+    font-size: 0.8em;
+    color: #666;
+    margin-top: 3px;
+}
+
+.unit-price {
+    font-size: 0.8em;
+    color: #008000;
+    margin-top: 3px;
+}
+
 /* Estilos para la página de carrito */
 body {
     font-family: 'Arial', sans-serif;

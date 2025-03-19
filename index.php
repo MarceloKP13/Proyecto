@@ -55,38 +55,26 @@
             <h1>Descubre HAVCANA</h1>
             <p class="tagline">Vinos artesanales con sabores únicos</p>
             <p class="description">Nuestra pasión por los vinos artesanales nos lleva a crear sabores excepcionales que deleitarán tus sentidos. Elaborados con los mejores ingredientes y un proceso cuidadoso.</p>
-            <a href="php/catalogo.php" class="cta-button">Explorar Colección</a>
+            <a href="php/catalogo.php" class="cta-button">Explorar Catálogo</a>
         </div>
     </main>
     
     <section class="featured-products">
         <h2>Nuestros Vinos</h2>
         <div class="products-grid">
-            <div class="product-card">
-                <img src="anexos/imagenes/pepiche.jpg" alt="Vino de Pepiche">
-                <h3>Vino de Pepiche</h3>
-                <p>Sabor exótico y refrescante</p>
-            </div>
-            <div class="product-card">
-                <img src="anexos/imagenes/manzana.jpg" alt="Vino de Manzana">
-                <h3>Vino de Manzana</h3>
-                <p>Dulce y aromático con notas frutales</p>
-            </div>
-            <div class="product-card">
-                <img src="anexos/imagenes/uvacaimorona.jpg" alt="Vino de Uva Caimorona">
-                <h3>Vino de Uva Caimorona</h3>
-                <p>Sabor intenso y aterciopelado</p>
-            </div>
-            <div class="product-card">
-                <img src="anexos/imagenes/uvilla.jpg" alt="Vino de Uvilla">
-                <h3>Vino de Uvilla</h3>
-                <p>Equilibrado y ligeramente ácido</p>
-            </div>
-            <div class="product-card">
-                <img src="anexos/imagenes/floryuva.jpg" alt="Vino Flor y Uva">
-                <h3>Vino Flor y Uva</h3>
-                <p>Delicado bouquet floral y frutal</p>
-            </div>
+            <?php
+            include 'php/auth/conexion_be.php';
+            $result = mysqli_query($conexion, "SELECT nombre, descripcion, imagen FROM productos");
+            while ($producto = mysqli_fetch_assoc($result)) {
+                $imagen = str_replace('../', '', $producto['imagen']); // Ajustar la ruta para index.php
+                echo '<div class="product-card">';
+                echo '<img src="' . $imagen . '" alt="' . $producto['nombre'] . '">';
+                echo '<h3>' . $producto['nombre'] . '</h3>';
+                echo '<p>' . $producto['descripcion'] . '</p>';
+                echo '</div>';
+            }
+            mysqli_close($conexion);
+            ?>
         </div>
     </section>
     <footer class="site-footer">
