@@ -22,8 +22,8 @@ body {
 
 .hero-content {
     max-width: 800px;
-    background-image: url('../imagenes/vinosyura.jpg');
-    background-size: cover;
+    background-image: url('../imagenes/logoyura.png');
+    background-size: contain;
     background-position: center;
     position: relative;
     padding: 40px;
