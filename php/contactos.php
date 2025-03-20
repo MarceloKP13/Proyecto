@@ -82,7 +82,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HAVCANA - Contacto</title>
-    <link rel="icon" href="../anexos/imagenes/havcanalogo.png">
+    <link rel="icon" href="../anexos/imagenes/logominiatura.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="../anexos/css/header.css">
     <link rel="stylesheet" href="../anexos/css/boton.css">
@@ -292,7 +292,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
         </section>
     </main>
 
-    <footer>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>HAVCANA</h3>
+                <p>Vinos artesanales con sabores únicos elaborados con pasión y tradición.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="../php/catalogo.php">Catálogo</a></li>
+                    <li><a href="../php/carrito.php">Carrito</a></li>
+                    <li><a href="../php/info.php">Sobre Nosotros</a></li>
+                    <li><a href="../php/contactos.php">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Nueva Loja, Sucumbios, Ecuador</p>
+                <p><i class="fas fa-phone"></i> +593 968 403 024</p>
+                <p><i class="fas fa-envelope"></i> info@havcana.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Havcana" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/Havcana" target="_blank"><img src="../anexos/imagenes/instagram.png" alt="Instagram"></a>
+                <a href="https://www.x.com/Havcana" target="_blank"><img src="../anexos/imagenes/x.png" alt="Twitter"></a>
+            </div>
+        </div>
         <div class="whatsapp-button">
             <a href="https://wa.me/593968403024" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contact-text">Contacto Directo</span>
