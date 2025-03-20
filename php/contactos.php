@@ -4,58 +4,55 @@ session_start();
 // En una implementación real, estos datos vendrían de la base de datos
 $team = [
     [
-        'nombre' => 'Juan Pérez',
+        'nombre' => 'Marcos Mariño',
         'rol' => 'Fundador',
         'descripcion' => 'Apasionado de la vinicultura con más de 10 años de experiencia. Su visión dio origen a HAVCANA con el objetivo de crear vinos artesanales únicos y accesibles.',
-        'imagen' => '../anexos/imagenes/fundador.jpg',
+        'imagen' => '../anexos/imagenes/marcos.png',
         'redes' => [
-            'twitter' => 'https://twitter.com/juanperez',
-            'instagram' => 'https://instagram.com/juanperez',
-            'linkedin' => 'https://linkedin.com/in/juanperez'
+            'whatsapp' => '+593 98 936 7154',
+            'tiktok' => '@emprenderdesde0',
+            'instagram' => '@havcana8'
         ]
     ],
     [
-        'nombre' => 'María Gómez',
-        'rol' => 'Diseñadora Web',
-        'descripcion' => 'Creativa y perfeccionista, María ha dado vida a la experiencia digital de HAVCANA. Su pasión por el diseño y la usabilidad se refleja en cada elemento de nuestra web.',
-        'imagen' => '../anexos/imagenes/disenadora.jpg',
+        'nombre' => 'Marcelo Torres',
+        'rol' => 'Diseñador Web',
+        'descripcion' => 'Creativo y perfeccionista, Marcelo ha dado vida a la experiencia digital de HAVCANA. Su pasión por el diseño y la usabilidad se refleja en cada elemento de nuestra web.',
+        'imagen' => '../anexos/imagenes/marce.jpg',
         'redes' => [
-            'twitter' => 'https://twitter.com/mariagomez',
-            'instagram' => 'https://instagram.com/mariagomez',
-            'behance' => 'https://behance.net/mariagomez'
+            'facebook' => '@MarceloKP13',
+            'instagram' => '@marce_kp13',
+            'tiktok' => '@marcelokp13',
+            'github' => 'MarceloKP13',
+            'whatsapp' => '+593 96 840 3024'
         ]
     ]
 ];
 
-// FAQs
 $faqs = [
     [
         'pregunta' => '¿Cómo puedo realizar un pedido?',
-        'respuesta' => 'Puedes realizar tu pedido directamente a través de nuestra tienda en línea. Simplemente navega por nuestro catálogo, selecciona los productos que deseas y añádelos al carrito. Una vez en el carrito, procede al pago siguiendo los pasos indicados.'
+        'respuesta' => 'Para realizar un pedido es necesario registrarse o iniciar sesión, ya que esto nos permite tener la información necesaria para generar el número de pedido. Una vez generada la orden, deberás contactar directamente por WhatsApp con el distribuidor para finalizar la transacción, esto con el fin de salvaguardar tu información personal y financiera.'
     ],
     [
         'pregunta' => '¿Cuáles son los métodos de pago aceptados?',
-        'respuesta' => 'Aceptamos pagos con tarjetas de crédito/débito (Visa, MasterCard, American Express), PayPal y transferencia bancaria. Todos los pagos se procesan de manera segura.'
+        'respuesta' => 'Al ser una transacción directa y acordada a través de WhatsApp, la forma de pago más factible es por transferencia o depósito. Trabajamos con Banco Pichincha y Bolivariano. En un futuro cercano, implementaremos métodos de pago adicionales.'
     ],
     [
         'pregunta' => '¿Cuánto tiempo tarda en llegar mi pedido?',
-        'respuesta' => 'El tiempo de entrega varía según tu ubicación. Generalmente, los envíos nacionales tardan entre 3-5 días hábiles. Para envíos internacionales, el tiempo estimado es de 7-14 días hábiles.'
+        'respuesta' => 'Los tiempos de entrega varían según el tamaño del pedido. Para pedidos pequeños, el tiempo de entrega es de 2 a 3 días. Para pedidos grandes, el tiempo máximo de entrega es de 7 a 10 días.'
     ],
     [
         'pregunta' => '¿Ofrecen envíos internacionales?',
-        'respuesta' => 'Sí, realizamos envíos a varios países. Los costos y tiempos de entrega varían según el destino. Puedes verificar la disponibilidad durante el proceso de compra.'
+        'respuesta' => 'Al ser una empresa emergente, actualmente solo realizamos envíos a nivel nacional a través de Servientrega, Tramaco Express y Correos del Ecuador.'
     ],
     [
         'pregunta' => '¿Cuál es la política de devoluciones?',
-        'respuesta' => 'Aceptamos devoluciones dentro de los 14 días siguientes a la recepción del producto. El producto debe estar sin abrir y en perfectas condiciones. Contacta con nuestro servicio de atención al cliente para iniciar el proceso.'
+        'respuesta' => 'Aceptamos devoluciones dentro de los 14 días siguientes a la recepción del producto. El producto debe estar sin abrir y en perfectas condiciones. Contacta con nuestro distribuidor para iniciar el proceso.'
     ],
     [
         'pregunta' => '¿Tienen tienda física?',
         'respuesta' => 'Actualmente operamos exclusivamente online, aunque ocasionalmente participamos en ferias y eventos. Sigue nuestras redes sociales para estar al tanto de dónde puedes encontrarnos.'
-    ],
-    [
-        'pregunta' => '¿Los vinos contienen alérgenos?',
-        'respuesta' => 'Nuestros vinos contienen sulfitos, que son necesarios para la conservación. En la descripción de cada producto encontrarás información detallada sobre posibles alérgenos.'
     ]
 ];
 
@@ -68,12 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contacto'])) {
 }
 
 // Procesar formulario de comentarios
-$comentario_enviado = false;
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario'])) {
-    // En una implementación real, aquí procesarías y guardarías el comentario en la base de datos
-    // Por ahora, simplemente mostraremos un mensaje de éxito
-    $comentario_enviado = true;
-}
+$comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_enviado'] == 'true';
 ?>
 
 <!DOCTYPE html>
@@ -210,47 +202,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
             </div>
         </section>
         
-        <section class="contact-form-section">
-            <div class="form-container">
-                <h2>Envíanos un Mensaje</h2>
-                <?php if ($mensaje_enviado): ?>
-                    <div class="success-message">
-                        <i class="fas fa-check-circle"></i>
-                        <p>¡Tu mensaje ha sido enviado con éxito! Nos pondremos en contacto contigo lo antes posible.</p>
-                    </div>
-                <?php else: ?>
-                <form action="contactos.php" method="POST" class="contact-form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre completo</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="telefono">Teléfono (opcional)</label>
-                        <input type="tel" id="telefono" name="telefono">
-                    </div>
-                    <div class="form-group">
-                        <label for="asunto">Asunto</label>
-                        <input type="text" id="asunto" name="asunto" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" name="submit_contacto" class="submit-btn">
-                        Enviar Mensaje <i class="fas fa-paper-plane"></i>
-                    </button>
-                </form>
-                <?php endif; ?>
-            </div>
-            
+        <section class="contact-form-section">            
             <div class="map-container">
                 <h2>Nuestra Ubicación</h2>
                 <div class="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247959.12089384528!2d-78.5660211!3d-0.1865938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a4002427c9f%3A0x44b991e158ef5572!2sQuito%2C%20Ecuador!5e0!3m2!1ses!2sec!4v1624304037290!5m2!1ses!2sec" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.817175371318!2d-76.88724082412895!3d0.08866449994247975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e28a82deaa93757%3A0x80bd34fb97e2f5ba!2sLAGO%20AGRIO%20MOTORS!5e0!3m2!1ses!2sec!4v1709771046099!5m2!1ses!2sec" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </section>
@@ -265,7 +221,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
                     <p>¡Gracias por tu comentario! Lo tendremos en cuenta para seguir mejorando.</p>
                 </div>
             <?php else: ?>
-            <form action="contactos.php" method="POST" class="comments-form">
+            <form action="auth_comen/guardar_comentario.php" method="POST" class="comments-form">
                 <div class="form-group">
                     <label for="nombre_comentario">Nombre (opcional)</label>
                     <input type="text" id="nombre_comentario" name="nombre_comentario" placeholder="Anónimo">
@@ -332,24 +288,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
     </footer>
 
     <script src="../anexos/js/menu.js"></script>
-    <script>
-        function toggleFaq(index) {
-            const answer = document.getElementById(`faq-answer-${index}`);
-            const questions = document.querySelectorAll('.faq-question');
-            const answers = document.querySelectorAll('.faq-answer');
-            
-            // Cerrar todas las respuestas excepto la actual
-            for (let i = 0; i < answers.length; i++) {
-                if (i !== index) {
-                    answers[i].classList.remove('active');
-                    questions[i].classList.remove('active');
-                }
-            }
-            
-            // Toggle la respuesta actual
-            answer.classList.toggle('active');
-            questions[index].classList.toggle('active');
-        }
-    </script>
+    <script src="../anexos/js/comentario.js"></script>
 </body>
 </html>
