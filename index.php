@@ -88,6 +88,7 @@
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="php/catalogo.php">Catálogo</a></li>
+                    <li><a href="php/carrito.php">Carrito</a></li>
                     <li><a href="php/info.php">Sobre Nosotros</a></li>
                     <li><a href="php/contactos.php">Contacto</a></li>
                 </ul>
@@ -100,7 +101,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2023 HAVCANA. Todos los derechos reservados.</p>
+            <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
             <div class="social-icons">
                 <a href="https://www.facebook.com/Havcana" target="_blank"><img src="anexos/imagenes/facebook.png" alt="Facebook"></a>
                 <a href="https://www.instagram.com/Havcana" target="_blank"><img src="anexos/imagenes/instagram.png" alt="Instagram"></a>
