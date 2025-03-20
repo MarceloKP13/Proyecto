@@ -147,24 +147,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_comentario']))
                     <i class="fas fa-phone-alt"></i>
                 </div>
                 <h3>Teléfono</h3>
+                <p>+593 98 936 7154</p>
                 <p>+593 96 840 3024</p>
-                <p>+593 98 765 4321</p>
             </div>
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fas fa-map-marker-alt"></i>
                 </div>
                 <h3>Dirección</h3>
-                <p>Av. Principal 123</p>
-                <p>Quito, Ecuador</p>
+                <p>Jambelí, Nueva Loja</p>
+                <p>Sucumbios, Ecuador</p>
             </div>
             <div class="contact-card">
                 <div class="contact-icon">
                     <i class="fas fa-clock"></i>
                 </div>
                 <h3>Horario</h3>
-                <p>Lunes a Viernes: 9am - 6pm</p>
-                <p>Fines de semana: 10am - 4pm</p>
+                <p>Lunes a Viernes: 9am - 9pm</p>
+                <p>Fines de semana: 10am - 6pm</p>
             </div>
         </section>
         
