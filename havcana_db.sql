@@ -1,3 +1,4 @@
+
 -- phpMyAdmin SQL Dump
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
@@ -10,7 +11,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -28,10 +28,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `comentarios` (
-  `id` int(11) NOT NULL,
-  `usuario_id` int(11) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(50) DEFAULT 'Anónimo',
+  `tipo_comentario` varchar(50) NOT NULL,
   `comentario` text NOT NULL,
-  `fecha` timestamp NOT NULL DEFAULT current_timestamp()
+  `fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -57,19 +59,7 @@ CREATE TABLE `pedidos` (
 
 INSERT INTO `pedidos` (`id`, `numero_pedido`, `usuario_id`, `fecha_pedido`, `subtotal`, `envio`, `total`, `estado`) VALUES
 (1, '#19032025001', 2, '2025-03-19 04:31:08', 14.98, 5.00, 19.98, 'realizado'),
-(2, '#19032025002', 2, '2025-03-19 04:31:13', 14.98, 5.00, 19.98, 'realizado'),
-(3, '#19032025003', 2, '2025-03-19 04:34:41', 14.98, 5.00, 19.98, 'pendiente'),
-(4, '#19032025004', 2, '2025-03-19 04:36:49', 4.99, 5.00, 9.99, 'pendiente'),
-(5, '#19032025005', 2, '2025-03-19 04:40:43', 9.99, 5.00, 14.99, 'realizado'),
-(6, '#19032025006', 2, '2025-03-19 04:41:10', 9.99, 5.00, 14.99, 'pendiente'),
-(7, '#19032025007', 2, '2025-03-19 04:42:00', 14.98, 5.00, 19.98, 'realizado'),
-(8, '#19032025008', 3, '2025-03-19 04:44:29', 4.99, 5.00, 9.99, 'realizado'),
-(9, '#19032025009', 2, '2025-03-19 04:44:58', 9.99, 5.00, 14.99, 'realizado'),
-(10, '#19032025010', 2, '2025-03-19 05:38:57', 29.97, 5.00, 34.97, 'pendiente'),
-(11, '#19032025011', 2, '2025-03-19 05:43:12', 39.94, 5.00, 44.94, 'pendiente'),
-(12, '#19032025012', 2, '2025-03-19 06:05:33', 19.98, 5.00, 24.98, 'pendiente'),
-(13, '#19032025013', 2, '2025-03-19 06:06:45', 9.99, 5.00, 14.99, 'pendiente'),
-(14, '#19032025014', 2, '2025-03-19 06:11:14', 9.99, 5.00, 14.99, 'pendiente');
+
 
 -- --------------------------------------------------------
 
@@ -128,13 +118,6 @@ INSERT INTO `usuarios` (`id`, `nombre_completo`, `correo`, `usuario`, `contrasen
 --
 
 --
--- Indices de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario_id` (`usuario_id`);
-
---
 -- Indices de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
@@ -186,12 +169,6 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `pedidos`

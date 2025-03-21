@@ -1,66 +1,9 @@
 <?php
 session_start();
 
-// En una implementación real, estos datos vendrían de la base de datos
-$team = [
-    [
-        'nombre' => 'Marcos Mariño',
-        'rol' => 'Fundador',
-        'descripcion' => 'Apasionado de la vinicultura con más de 10 años de experiencia. Su visión dio origen a HAVCANA con el objetivo de crear vinos artesanales únicos y accesibles.',
-        'imagen' => '../anexos/imagenes/marcos.png',
-        'redes' => [
-            'whatsapp' => '+593 98 936 7154',
-            'tiktok' => '@emprenderdesde0',
-            'instagram' => '@havcana8'
-        ]
-    ],
-    [
-        'nombre' => 'Marcelo Torres',
-        'rol' => 'Diseñador Web',
-        'descripcion' => 'Creativo y perfeccionista, Marcelo ha dado vida a la experiencia digital de HAVCANA. Su pasión por el diseño y la usabilidad se refleja en cada elemento de nuestra web.',
-        'imagen' => '../anexos/imagenes/marce.jpg',
-        'redes' => [
-            'facebook' => '@MarceloKP13',
-            'instagram' => '@marce_kp13',
-            'tiktok' => '@marcelokp13',
-            'github' => 'MarceloKP13',
-            'whatsapp' => '+593 96 840 3024'
-        ]
-    ]
-];
-
-$faqs = [
-    [
-        'pregunta' => '¿Cómo puedo realizar un pedido?',
-        'respuesta' => 'Para realizar un pedido es necesario registrarse o iniciar sesión, ya que esto nos permite tener la información necesaria para generar el número de pedido. Una vez generada la orden, deberás contactar directamente por WhatsApp con el distribuidor para finalizar la transacción, esto con el fin de salvaguardar tu información personal y financiera.'
-    ],
-    [
-        'pregunta' => '¿Cuáles son los métodos de pago aceptados?',
-        'respuesta' => 'Al ser una transacción directa y acordada a través de WhatsApp, la forma de pago más factible es por transferencia o depósito. Trabajamos con Banco Pichincha y Bolivariano. En un futuro cercano, implementaremos métodos de pago adicionales.'
-    ],
-    [
-        'pregunta' => '¿Cuánto tiempo tarda en llegar mi pedido?',
-        'respuesta' => 'Los tiempos de entrega varían según el tamaño del pedido. Para pedidos pequeños, el tiempo de entrega es de 2 a 3 días. Para pedidos grandes, el tiempo máximo de entrega es de 7 a 10 días.'
-    ],
-    [
-        'pregunta' => '¿Ofrecen envíos internacionales?',
-        'respuesta' => 'Al ser una empresa emergente, actualmente solo realizamos envíos a nivel nacional a través de Servientrega, Tramaco Express y Correos del Ecuador.'
-    ],
-    [
-        'pregunta' => '¿Cuál es la política de devoluciones?',
-        'respuesta' => 'Aceptamos devoluciones dentro de los 14 días siguientes a la recepción del producto. El producto debe estar sin abrir y en perfectas condiciones. Contacta con nuestro distribuidor para iniciar el proceso.'
-    ],
-    [
-        'pregunta' => '¿Tienen tienda física?',
-        'respuesta' => 'Actualmente operamos exclusivamente online, aunque ocasionalmente participamos en ferias y eventos. Sigue nuestras redes sociales para estar al tanto de dónde puedes encontrarnos.'
-    ]
-];
-
 // Procesar el formulario si se ha enviado
 $mensaje_enviado = false;
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit_contacto'])) {
-    // En una implementación real, aquí procesarías y guardarías el mensaje en la base de datos
-    // Por ahora, simplemente mostraremos un mensaje de éxito
     $mensaje_enviado = true;
 }
 
@@ -124,7 +67,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                 <p>Estamos aquí para ayudarte y responder a tus preguntas</p>
             </div>
         </section>
-        
+
         <section class="contact-info-section">
             <div class="contact-card">
                 <div class="contact-icon">
@@ -159,49 +102,104 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                 <p>Fines de semana: 10am - 6pm</p>
             </div>
         </section>
-        
+
         <section class="team-section">
             <h2>Nuestro Equipo</h2>
             <div class="team-cards">
-                <?php foreach ($team as $miembro): ?>
                 <div class="team-card">
                     <div class="team-image">
-                        <img src="<?php echo $miembro['imagen']; ?>" alt="<?php echo $miembro['nombre']; ?>">
+                        <img src="../anexos/imagenes/marcos.png" alt="Marcos Mariño">
                     </div>
                     <div class="team-info">
-                        <h3><?php echo $miembro['nombre']; ?></h3>
-                        <p class="team-role"><?php echo $miembro['rol']; ?></p>
-                        <p class="team-description"><?php echo $miembro['descripcion']; ?></p>
+                        <h3>Marcos Mariño</h3>
+                        <p class="team-role">Fundador</p>
+                        <p class="team-description">Apasionado de la vinicultura con más de 5 años de experiencia. Su visión dio origen a HAVCANA con el objetivo de crear vinos artesanales únicos y accesibles.</p>
                         <div class="social-links">
-                            <?php foreach ($miembro['redes'] as $red => $url): ?>
-                                <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer" aria-label="<?php echo $red; ?>">
-                                    <i class="fab fa-<?php echo $red; ?>"></i>
-                                </a>
-                            <?php endforeach; ?>
+                            <a href="https://wa.me/+59398936715" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.tiktok.com/@emprenderdesde0" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://www.instagram.com/havcana8" target="_blank"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
                 </div>
-                <?php endforeach; ?>
+                <div class="team-card">
+                    <div class="team-image">
+                        <img src="../anexos/imagenes/marce.jpg" alt="Marcelo Torres">
+                    </div>
+                    <div class="team-info">
+                        <h3>Marcelo Torres</h3>
+                        <p class="team-role">Diseñador Web</p>
+                        <p class="team-description">Creativo y perfeccionista, Marcelo ha dado vida a la experiencia digital de HAVCANA. Su pasión por el diseño y la usabilidad se refleja en cada elemento de nuestra web.</p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/MarceloKP13" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/marce_kp13" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.tiktok.com/@marcelokp13" target="_blank"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://github.com/MarceloKP13" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://wa.me/+593968403024" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        
+
         <section class="faq-section">
             <h2>Preguntas Frecuentes</h2>
             <div class="faq-accordion">
-                <?php foreach ($faqs as $index => $faq): ?>
                 <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(<?php echo $index; ?>)">
-                        <?php echo $faq['pregunta']; ?>
+                    <div class="faq-question" onclick="toggleFaq(0)">
+                        ¿Cómo puedo realizar un pedido?
                         <i class="fas fa-chevron-down"></i>
                     </div>
-                    <div class="faq-answer" id="faq-answer-<?php echo $index; ?>">
-                        <?php echo $faq['respuesta']; ?>
+                    <div class="faq-answer" id="faq-answer-0">
+                        Para realizar un pedido es necesario registrarse o iniciar sesión, ya que esto nos permite tener la información necesaria para generar el número de pedido. Una vez generada la orden, deberás contactar directamente por WhatsApp con el distribuidor para finalizar la transacción, esto con el fin de salvaguardar tu información personal y financiera.
                     </div>
                 </div>
-                <?php endforeach; ?>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(1)">
+                        ¿Cuáles son los métodos de pago aceptados?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-1">
+                        Al ser una transacción directa y acordada a través de WhatsApp, la forma de pago más factible es por transferencia o depósito. Trabajamos con Banco Pichincha y Bolivariano. En un futuro cercano, implementaremos métodos de pago adicionales.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(2)">
+                        ¿Cuánto tiempo tarda en llegar mi pedido?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-2">
+                        Los tiempos de entrega varían según el tamaño del pedido. Para pedidos pequeños, el tiempo de entrega es de 2 a 3 días. Para pedidos grandes, el tiempo máximo de entrega es de 7 a 10 días.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(3)">
+                        ¿Ofrecen envíos internacionales?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-3">
+                        Al ser una empresa emergente, actualmente solo realizamos envíos a nivel nacional a través de Servientrega, Tramaco Express y Correos del Ecuador.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(4)">
+                        ¿Cuál es la política de devoluciones?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-4">
+                        Aceptamos devoluciones dentro de los 14 días siguientes a la recepción del producto. El producto debe estar sin abrir y en perfectas condiciones. Contacta con nuestro distribuidor para iniciar el proceso.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(5)">
+                        ¿Tienen tienda física?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer" id="faq-answer-5">
+                        Actualmente operamos exclusivamente online, aunque ocasionalmente participamos en ferias y eventos. Sigue nuestras redes sociales para estar al tanto de dónde puedes encontrarnos.
+                    </div>
+                </div>
             </div>
         </section>
-        
         <section class="contact-form-section">            
             <div class="map-container">
                 <h2>Nuestra Ubicación</h2>
@@ -209,12 +207,11 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.817175371318!2d-76.88724082412895!3d0.08866449994247975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e28a82deaa93757%3A0x80bd34fb97e2f5ba!2sLAGO%20AGRIO%20MOTORS!5e0!3m2!1ses!2sec!4v1709771046099!5m2!1ses!2sec" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
-        </section>
-        
+                    </section>
         <section class="comments-section">
             <h2>Comentarios y Sugerencias</h2>
             <p class="comments-intro">Valoramos tu opinión y estamos siempre buscando mejorar. Comparte tus comentarios, sugerencias o ideas con nosotros.</p>
-            
+
             <?php if ($comentario_enviado): ?>
                 <div class="success-message">
                     <i class="fas fa-check-circle"></i>

@@ -270,10 +270,12 @@ body {
     min-width: 300px;
 }
 
-.form-container h2, .map-container h2 {
+.form-container h2, .map-container h2,
+.product-comments-section h2 {
     color: #660030;
     font-size: 1.8rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .contact-form .form-group, .comments-form .form-group {
@@ -347,6 +349,95 @@ body {
 }
 
 .success-message {
+
+/* Sección de comentarios de productos */
+.product-comments-section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.product-comments-section h2 {
+    color: #660030;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    position: relative;
+}
+
+.product-comments-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #660030;
+}
+
+.product-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0 30px;
+}
+
+.product-comment {
+    background-color: white;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 4px solid #660030;
+}
+
+.product-comment:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #660030;
+    font-size: 1.1em;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    color: #888;
+    font-style: italic;
+}
+
+.comment-content {
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.05em;
+}
+
+.no-comments {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 30px 0;
+    background-color: white;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
     background-color: #d4edda;
     color: #155724;
     padding: 15px;
@@ -365,11 +456,11 @@ body {
     .contact-form-section {
         flex-direction: column;
     }
-    
+
     .hero-content h1 {
         font-size: 2rem;
     }
-    
+
     .contact-card {
         width: 100%;
     }
