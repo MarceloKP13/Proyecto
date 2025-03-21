@@ -1,16 +1,4 @@
-.price-type {
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 3px;
-}
-
-.unit-price {
-    font-size: 0.8em;
-    color: #008000;
-    margin-top: 3px;
-}
-
-/* Estilos para la página de carrito */
+/* Estilos base */
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -228,9 +216,17 @@ body {
     border-bottom: 1px solid #eee;
 }
 
+/* Media Queries para hacer la página responsive */
+
+/* En pantallas de hasta 768px (móviles y tablets) */
 @media (max-width: 768px) {
     .cart-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .cart-container h1 {
+        font-size: 2rem;
     }
 
     .cart-table {
@@ -248,5 +244,51 @@ body {
 
     .summary-row.total {
         font-size: 1.2rem;
+    }
+
+    .continue-shopping,
+    .empty-cart-btn,
+    .checkout-btn {
+        width: 100%;
+    }
+
+    .cart-summary {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 326px) {
+    .cart-container {
+        padding: 0 10px;
+    }
+
+    .cart-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .cart-items {
+        padding: 15px;
+    }
+
+    .cart-table th,
+    .cart-table td {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .empty-cart i {
+        font-size: 3rem;
+    }
+
+    .empty-cart p {
+        font-size: 1rem;
+    }
+
+    .checkout-btn {
+        padding: 10px 15px;
+    }
+
+    .empty-cart-btn {
+        padding: 8px 15px;
     }
 }

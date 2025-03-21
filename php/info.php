@@ -166,7 +166,7 @@ session_start();
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="../php/catalogo.php">Catálogo</a></li>
                     <li><a href="../php/carrito.php">Carrito</a></li>
-                    <li><a href="../php/auth_pro/pedido.php">Mis compras</a></li>
+                    <li><a href="../php/auth_pro/pedido.php">Mis Compras</a></li>
                     <li><a href="../php/info.php">Sobre Nosotros</a></li>
                     <li><a href="../php/contactos.php">Contacto</a></li>
                 </ul>
@@ -174,7 +174,7 @@ session_start();
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Nueva Loja, Sucumbios, Ecuador</p>
-                <p><i class="fas fa-phone"></i> +593 968 403 024</p>
+                <p><i class="fas fa-phone"></i> +593 98 936 7154</p>
                 <p><i class="fas fa-envelope"></i> info@havcana.com</p>
             </div>
         </div>
@@ -187,7 +187,7 @@ session_start();
             </div>
         </div>
         <div class="whatsapp-button">
-            <a href="https://wa.me/593968403024" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/+593989367154" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contact-text">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>
