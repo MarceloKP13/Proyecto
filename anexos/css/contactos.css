@@ -184,13 +184,23 @@ body {
 }
 
 .social-links a {
-    color: #660030;
-    font-size: 1.5rem;
-    transition: color 0.3s;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.social-links img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .social-links a:hover {
-    color: #880030;
+    transform: translateY(-3px);
+}
+
+.social-links a:active {
+    transform: translateY(1px);
 }
 
 /* Sección de FAQ */

@@ -52,7 +52,9 @@ $ejecutar = mysqli_query($conexion, $query);
 
 if ($ejecutar) {
     session_start();
-    $_SESSION['usuario'] = $usuario; 
+    $_SESSION['usuario'] = $usuario;
+    $_SESSION['es_admin'] = $es_admin;
+    $_SESSION['usuario_id'] = mysqli_insert_id($conexion);
     echo '
         <script>
             alert("Usuario registrado exitosamente.");

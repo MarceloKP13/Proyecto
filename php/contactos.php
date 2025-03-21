@@ -115,9 +115,9 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                         <p class="team-role">Fundador</p>
                         <p class="team-description">Apasionado de la vinicultura con más de 5 años de experiencia. Su visión dio origen a HAVCANA con el objetivo de crear vinos artesanales únicos y accesibles.</p>
                         <div class="social-links">
-                            <a href="https://wa.me/+59398936715" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                            <a href="https://www.tiktok.com/@emprenderdesde0" target="_blank"><i class="fab fa-tiktok"></i></a>
-                            <a href="https://www.instagram.com/havcana8" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://wa.me/+59398936715" target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
+                            <a href="https://www.tiktok.com/@emprenderdesde0" target="_blank"><img src ="../anexos/imagenes/tiktok.png" alt="Tik tok"></a>
+                            <a href="https://www.instagram.com/havcana8" target="_blank"><img src ="../anexos/imagenes/instagram.png" alt="Tik tok"></a>
                         </div>
                     </div>
                 </div>
@@ -130,11 +130,11 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                         <p class="team-role">Diseñador Web</p>
                         <p class="team-description">Creativo y perfeccionista, Marcelo ha dado vida a la experiencia digital de HAVCANA. Su pasión por el diseño y la usabilidad se refleja en cada elemento de nuestra web.</p>
                         <div class="social-links">
-                            <a href="https://www.facebook.com/MarceloKP13" target="_blank"><i class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/marce_kp13" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.tiktok.com/@marcelokp13" target="_blank"><i class="fab fa-tiktok"></i></a>
-                            <a href="https://github.com/MarceloKP13" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://wa.me/+593968403024" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://www.facebook.com/MarceloKP13" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
+                            <a href="https://www.instagram.com/marce_kp13" target="_blank"><img src="../anexos/imagenes/instagram.png" alt="Instagram"></a>
+                            <a href="https://www.tiktok.com/@marcelokp13" target="_blank"><img src="../anexos/imagenes/tiktok.png" alt="TikTok"></a>
+                            <a href="https://github.com/MarceloKP13" target="_blank"><img src="../anexos/imagenes/github2.png" alt="GitHub"></a>
+                            <a href="https://wa.me/+593968403024" target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
                         </div>
                     </div>
                 </div>
