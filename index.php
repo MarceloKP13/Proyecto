@@ -32,9 +32,9 @@
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="php/catalogo.php">Catálogo</a></li>
                     <li><a href="php/carrito.php">Carrito</a></li>
+                    <li><a href="php/auth_pro/pedido.php">Mis Compras</a></li>
                     <li><a href="php/info.php">Sobre Nosotros</a></li>
                     <li><a href="php/contactos.php">Contacto</a></li>
-                    <li><a href="php/auth_pro/pedido.php">Mis Compras</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
                             <a href="php/auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
@@ -90,9 +90,9 @@
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="php/catalogo.php">Catálogo</a></li>
                     <li><a href="php/carrito.php">Carrito</a></li>
+                    <li><a href="php/auth_pro/pedido.php">Mis compras</a></li>
                     <li><a href="php/info.php">Sobre Nosotros</a></li>
                     <li><a href="php/contactos.php">Contacto</a></li>
-                    <li><a href="php/auth_pro/pedido.php">Mis compras</a></li>
                 </ul>
             </div>
             <div class="footer-section">

@@ -56,10 +56,10 @@ $pedidos = $stmt->get_result();
                 <ul class="nav-menu">
                     <li><a href="../../index.php">Inicio</a></li>
                     <li><a href="../catalogo.php">Catálogo</a></li>
-                    <li><a href="../carrito.php">Carrito</a></li>
-                    <li><a href="../info.php">Sobre Nosotros</a></li>
-                    <li><a href="../contactos.php">Contacto</a></li>                    
+                    <li><a href="../carrito.php">Carrito</a></li>                    
                     <li><a href="pedido.php">Mis Compras</a></li>
+                    <li><a href="../info.php">Sobre Nosotros</a></li>
+                    <li><a href="../contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
                             <a href="pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
@@ -116,6 +116,45 @@ $pedidos = $stmt->get_result();
             </div>
         <?php endif; ?>
     </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>HAVCANA</h3>
+                <p>Vinos artesanales con sabores únicos elaborados con pasión y tradición.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="../../php/catalogo.php">Catálogo</a></li>
+                    <li><a href="../../php/carrito.php">Carrito</a></li>
+                    <li><a href="../../php/auth_pro/pedido.php">Mis Compras</a></li>
+                    <li><a href="../../php/info.php">Sobre Nosotros</a></li>
+                    <li><a href="../../php/contactos.php">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Nueva Loja, Sucumbios, Ecuador</p>
+                <p><i class="fas fa-phone"></i> +593 968 403 024</p>
+                <p><i class="fas fa-envelope"></i> info@havcana.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/Havcana" target="_blank"><img src="../../anexos/imagenes/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/Havcana" target="_blank"><img src="../../anexos/imagenes/instagram.png" alt="Instagram"></a>
+                <a href="https://www.x.com/Havcana" target="_blank"><img src="../../anexos/imagenes/x.png" alt="Twitter"></a>
+            </div>
+        </div>
+        <div class="whatsapp-button">
+            <a href="https://wa.me/593968403024" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+                <span class="contact-text">Contacto Directo</span>
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </footer>
 
     <script src="../../anexos/js/menu.js"></script>
 </body>

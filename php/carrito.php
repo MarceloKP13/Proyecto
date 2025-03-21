@@ -138,9 +138,9 @@ $total = $subtotal + $envio;
                     <li><a href="../index.php">Inicio</a></li>
                     <li><a href="catalogo.php">Catálogo</a></li>
                     <li><a href="carrito.php">Carrito</a></li>
+                    <li><a href="auth_pro/pedido.php">Mis Compras</a></li>
                     <li><a href="info.php">Sobre Nosotros</a></li>
                     <li><a href="contactos.php">Contacto</a></li>
-                    <li><a href="auth_pro/pedido.php">Mis Compras</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
                             <a href="auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
@@ -255,7 +255,7 @@ $total = $subtotal + $envio;
                             window.location.href = 'auth/login_registro_global.php';
                         }
                     <?php else: ?>
-                        window.location.href = 'auth_pro/pedido.php';
+                        window.location.href = 'auth_pro/procesar_pedido.php';
                     <?php endif; ?>
                 }
                 </script>
