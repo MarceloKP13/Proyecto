@@ -1,3 +1,27 @@
+function deleteComment(commentId) {
+    if (confirm('¿Estás seguro de que deseas eliminar este comentario?')) {
+        fetch('auth_comen/eliminar_comentario.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'id=' + commentId
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Error al eliminar el comentario');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error al eliminar el comentario');
+        });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('.comments-form');
 

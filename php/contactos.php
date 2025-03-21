@@ -243,6 +243,37 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
             </form>
             <?php endif; ?>
         </section>
+    
+        <section class="product-comments-section">
+            <h2>Comentarios sobre Productos</h2>
+            <div class="product-comments">
+                <?php
+                include 'auth_comen/conexion_com.php';
+                $sql = "SELECT c.*, COALESCE(NULLIF(c.nombre, ''), 'Anónimo') as nombre_mostrado 
+                        FROM comentarios c 
+                        WHERE c.tipo_comentario = 'producto' 
+                        ORDER BY c.fecha DESC";
+                $result = $conexion->query($sql);
+
+                if ($result && $result->num_rows > 0) {
+                    while ($comentario = $result->fetch_assoc()) {
+                        echo '<div class="product-comment">';
+                        if (isset($_SESSION['es_admin']) && $_SESSION['es_admin']) {
+                            echo '<button class="delete-comment" onclick="deleteComment(' . $comentario['id'] . ')" title="Eliminar comentario"><i class="fas fa-times"></i></button>';
+                        }
+                        echo '<div class="comment-header">';
+                        echo '<span class="comment-author">' . htmlspecialchars($comentario['nombre_mostrado']) . '</span>';
+                        echo '<span class="comment-date">' . date('d/m/Y H:i', strtotime($comentario['fecha'])) . '</span>';
+                        echo '</div>';
+                        echo '<div class="comment-content">' . htmlspecialchars($comentario['comentario']) . '</div>';
+                        echo '</div>';
+                    }
+                } else {
+                    echo '<p class="no-comments">Aún no hay comentarios sobre productos.</p>';
+                }
+                ?>
+            </div>
+        </section>
     </main>
 
     <footer class="site-footer">
