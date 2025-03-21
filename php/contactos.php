@@ -44,6 +44,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                     <li><a href="carrito.php">Carrito</a></li>
                     <li><a href="info.php">Sobre Nosotros</a></li>
                     <li><a href="contactos.php">Contacto</a></li>
+                    <li><a href="auth_pro/pedido.php">Mis Compras</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
                         <li class="user-info">
                             <a href="auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
