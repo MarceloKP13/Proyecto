@@ -32,7 +32,7 @@ session_start();
                     <li><a href="../index.php">Inicio</a></li>
                     <li><a href="catalogo.php">Catálogo</a></li>
                     <li><a href="carrito.php">Carrito</a></li>
-                    <li><a href="auth_pro/pedido.php">Mis Compras</a></li>
+                    <li><a href="auth_pro/pedido.php">Pedidos</a></li>
                     <li><a href="info.php">Sobre Nosotros</a></li>
                     <li><a href="contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
@@ -166,7 +166,7 @@ session_start();
                     <li><a href="index.php">Inicio</a></li>
                     <li><a href="../php/catalogo.php">Catálogo</a></li>
                     <li><a href="../php/carrito.php">Carrito</a></li>
-                    <li><a href="../php/auth_pro/pedido.php">Mis Compras</a></li>
+                    <li><a href="../php/auth_pro/pedido.php">Pedidos</a></li>
                     <li><a href="../php/info.php">Sobre Nosotros</a></li>
                     <li><a href="../php/contactos.php">Contacto</a></li>
                 </ul>

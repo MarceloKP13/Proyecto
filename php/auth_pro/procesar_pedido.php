@@ -8,7 +8,12 @@ if (!isset($_SESSION['usuario_id']) || empty($_SESSION['carrito'])) {
 }
 
 $usuario_id = $_SESSION['usuario_id'];
-$numero_pedido = 'PED-' . time() . '-' . $usuario_id;
+$fecha = date('dmY');
+$sql = "SELECT COUNT(*) as total FROM pedidos WHERE DATE(fecha_pedido) = CURDATE()";
+$result = mysqli_query($conexion, $sql);
+$row = mysqli_fetch_assoc($result);
+$secuencial = str_pad($row['total'] + 1, 3, '0', STR_PAD_LEFT);
+$numero_pedido = 'PED-' . $fecha . $secuencial . '-' . $usuario_id;
 $subtotal = 0;
 $envio = 5.00;
 

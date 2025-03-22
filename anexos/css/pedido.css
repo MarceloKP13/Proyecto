@@ -1,55 +1,32 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
 .pedido-container {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
 }
 
-.pedido-container h1, h2{
-    color: #660030;
-    text-align: center;
-}
-.detalles-pedido {
-    margin: 5px 0;
-    padding: 7.5px;
-    border-bottom: 1px solid #eee;
-}
-
-.resumen-pedido {
-    margin: 20px 0;
-    padding: 15px;
-}
-
-.resumen-pedido .total {
-    font-size: 1.2em;
-    color: #660030;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px solid #eee;
-}
-
-.mensaje-privacidad {
-    margin-top: 10px;
-    padding: 0px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+.search-container {
+    margin-bottom: 20px;
     text-align: center;
 }
 
-.whatsapp-button {
-    display: inline-block;
-    background-color: #25D366;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-top: 20px;
-    font-size: 1.1em;
-    transition: background-color 0.3s;
+.search-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #660030;
+    border-radius: 25px;
+    font-size: 16px;
 }
 
-.whatsapp-button:hover {
-    background-color: #128C7E;
-}
 .pedido-card {
     border: 1px solid #ddd;
     padding: 20px;
@@ -58,52 +35,114 @@
     background-color: white;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
 .pedido-header {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    align-items: center;
+    margin-bottom: 15px;
     border-bottom: 1px solid #eee;
     padding-bottom: 10px;
 }
+
 .estado-pendiente {
     color: #ff9800;
     font-weight: bold;
-    margin-top: 25px;
 }
-.estado-completado, .estado-realizado {
-    color: #4CAF50;
-    font-weight: bold;
+
+.estado-pendiente:hover{
+    cursor: pointer;
+    color: #016d01;
 }
-.estado-eliminado {
-    color: #f44336;
-    font-weight: bold;
-}
-.whatsapp-button {
-    background-color: #25D366;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-.whatsapp-button:hover {
-    background-color: #128C7E;
-}
-.sin-pedidos {
-    text-align: center;
-    padding: 40px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
+
+.productos-pedido {
     margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
 }
-/* Estilos para la página de pedido */
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    background-color: #f9f9f9;
+
+.producto-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.resumen-total {
+    margin-top: 20px;
+    text-align: right;
+    padding-top: 10px;
+    border-top: 2px solid #660030;
+}
+
+.total-final {
+    font-size: 1.2em;
+    color: #660030;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background: #660030;
+    transition: 0.3s;
+}
+.sin-pedidos p{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.whatsapp-button {
+    background-color: #25d366;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: 500;
+}
+
+.whatsapp-button i {
+    font-size: 1.2em;
+}
+
+.whatsapp-button:hover {
+    background-color: #128c7e;
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+
+    .pedido-container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+
+    .producto-item {
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+    }
 }
