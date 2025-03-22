@@ -112,7 +112,7 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </main>
     <footer>
         <div class="whatsapp-button">
-            <a href="https://wa.me/+593989367154" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contact-text">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>

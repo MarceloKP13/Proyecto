@@ -102,7 +102,7 @@ $pedidos = $stmt->get_result();
                     
                     <div class="mensaje-privacidad">
                         <p>Para proteger su información personal y financiera, por favor contacte directamente con nuestro distribuidor para coordinar el pago y la entrega de su pedido.</p>
-                        <a href="https://wa.me/+593989367154?text=Hola, quisiera consultar sobre mi pedido <?php echo urlencode($pedido['numero_pedido']); ?>" 
+                        <a href="https://wa.me/+593939339269?text=Hola, quisiera consultar sobre mi pedido <?php echo urlencode($pedido['numero_pedido']); ?>" 
                            class="whatsapp-button" 
                            target="_blank">
                             <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
@@ -136,7 +136,7 @@ $pedidos = $stmt->get_result();
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Nueva Loja, Sucumbios, Ecuador</p>
-                <p><i class="fas fa-phone"></i> +593 968 403 024</p>
+                <p><i class="fas fa-phone"></i> +593 93 933 9269</p>
                 <p><i class="fas fa-envelope"></i> info@havcana.com</p>
             </div>
         </div>
@@ -149,7 +149,7 @@ $pedidos = $stmt->get_result();
             </div>
         </div>
         <div class="whatsapp-button">
-            <a href="https://wa.me/+593989367154" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/++593939339269" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contact-text">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>

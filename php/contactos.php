@@ -83,7 +83,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                     <i class="fas fa-phone-alt"></i>
                 </div>
                 <h3>Teléfono</h3>
-                <p>+593 98 936 7154</p>
+                <p>+593 93 933 9269</p>
                 <p>+593 96 840 3024</p>
             </div>
             <div class="contact-card">
@@ -116,7 +116,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                         <p class="team-role">Fundador</p>
                         <p class="team-description">Apasionado de la vinicultura con más de 5 años de experiencia. Su visión dio origen a HAVCANA con el objetivo de crear vinos artesanales únicos y accesibles.</p>
                         <div class="social-links">
-                            <a href="https://wa.me/+59398936715" target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
+                            <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
                             <a href="https://www.tiktok.com/@emprenderdesde0" target="_blank"><img src ="../anexos/imagenes/tiktok.png" alt="Tik tok"></a>
                             <a href="https://www.instagram.com/havcana8" target="_blank"><img src ="../anexos/imagenes/instagram.png" alt="Tik tok"></a>
                         </div>
@@ -135,7 +135,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                             <a href="https://www.instagram.com/marce_kp13" target="_blank"><img src="../anexos/imagenes/instagram.png" alt="Instagram"></a>
                             <a href="https://www.tiktok.com/@marcelokp13" target="_blank"><img src="../anexos/imagenes/tiktok.png" alt="TikTok"></a>
                             <a href="https://github.com/MarceloKP13" target="_blank"><img src="../anexos/imagenes/github2.png" alt="GitHub"></a>
-                            <a href="https://wa.me/+593968403024" target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
+                            <a href="https://wa.me/+593968403024?text=Hola Marcelo, visité HAVCANAShop, me gustaría contactarme contigo." target="_blank"><img src="../anexos/imagenes/whatsapp2.png" alt="WhatsApp"></a>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Nueva Loja, Sucumbios, Ecuador</p>
-                <p><i class="fas fa-phone"></i> +593 98 936 7154</p>
+                <p><i class="fas fa-phone"></i> +593 93 933 9269</p>
                 <p><i class="fas fa-envelope"></i> info@havcana.com</p>
             </div>
         </div>
@@ -310,7 +310,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
             </div>
         </div>
         <div class="whatsapp-button">
-            <a href="https://wa.me/+593989367154" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contact-text">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>

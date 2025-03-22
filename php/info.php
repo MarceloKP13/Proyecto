@@ -174,7 +174,7 @@ session_start();
             <div class="footer-section">
                 <h3>Contacto</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Nueva Loja, Sucumbios, Ecuador</p>
-                <p><i class="fas fa-phone"></i> +593 98 936 7154</p>
+                <p><i class="fas fa-phone"></i> +593 93 933 9269</p>
                 <p><i class="fas fa-envelope"></i> info@havcana.com</p>
             </div>
         </div>
@@ -187,7 +187,7 @@ session_start();
             </div>
         </div>
         <div class="whatsapp-button">
-            <a href="https://wa.me/+593989367154" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/+593939339269" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contact-text">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>
