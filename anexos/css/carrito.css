@@ -259,7 +259,7 @@ body {
     }
 }
 
-@media (max-width: 326px) {
+@media (max-width: 425px) {
     .cart-container {
         padding: 0 10px;
     }
