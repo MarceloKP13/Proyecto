@@ -181,9 +181,9 @@ session_start();
         <div class="footer-bottom">
             <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
             <div class="social-icons">
-                <a href="https://www.facebook.com/Havcana" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
-                <a href="https://www.instagram.com/Havcana" target="_blank"><img src="../anexos/imagenes/instagram.png" alt="Instagram"></a>
-                <a href="https://www.x.com/Havcana" target="_blank"><img src="../anexos/imagenes/x.png" alt="Twitter"></a>
+                <a href="https://www.facebook.com/havcana8" target="_blank"><img src="../anexos/imagenes/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/havcana8" target="_blank"><img src="../anexos/imagenes/instagram.png" alt="Instagram"></a>
+                <a href="https://www.x.com/havcana8" target="_blank"><img src="../anexos/imagenes/x.png" alt="Twitter"></a>
             </div>
         </div>
         <div class="whatsapp-button">
