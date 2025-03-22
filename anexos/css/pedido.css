@@ -50,11 +50,6 @@ body {
     font-weight: bold;
 }
 
-.estado-pendiente:hover{
-    cursor: pointer;
-    color: #016d01;
-}
-
 .productos-pedido {
     margin-top: 20px;
     padding: 15px;
@@ -95,12 +90,7 @@ body {
     width: 25px;
     height: 3px;
     margin: 5px 0;
-    background: #660030;
     transition: 0.3s;
-}
-.sin-pedidos p{
-    text-align: center;
-    margin-top: 50px;
 }
 
 .whatsapp-button {
@@ -127,22 +117,59 @@ body {
     text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .hamburger {
         display: block;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1000;
-    }
-
-    .pedido-container {
-        margin: 20px auto;
-        padding: 10px;
-    }
-
-    .producto-item {
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
     }
 }
+
+@media (max-width: 500px) {
+        .search-input {
+        width: 90%;
+    }
+    .pedido-container {
+            padding: 5px;
+        }
+    
+        .pedido-card {
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+    
+        .pedido-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+        }
+    
+        .producto-item {
+            grid-template-columns: 1fr;
+            text-align: left;
+            padding: 8px 0;
+        }
+    
+        .search-input {
+            font-size: 14px;
+            padding: 8px;
+        }
+    
+        .whatsapp-button {
+            width: 90%;
+            justify-content: center;
+            padding: 12px;
+            font-size: 14px;
+        }
+    
+        .detalles-pedido p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+    
+        .resumen-total {
+            font-size: 14px;
+        }
+    
+        .total-final {
+            font-size: 16px;
+        }
+    }

@@ -216,10 +216,7 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-/* Media Queries para hacer la página responsive */
-
-/* En pantallas de hasta 768px (móviles y tablets) */
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     .cart-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -247,7 +244,9 @@ body {
         font-size: 1.2rem;
     }
 
-    .continue-shopping,
+    .continue-shopping{
+        width: 50%;
+    }
     .empty-cart-btn,
     .checkout-btn {
         width: 100%;
