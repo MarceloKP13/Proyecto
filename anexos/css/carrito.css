@@ -7,20 +7,20 @@ body {
     background-color: #f9f9f9;
 }
 
-.cart-container {
+.carro-contenedor {
     max-width: 1200px;
     margin: 90px auto 40px;
     padding: 0 20px;
 }
 
-.cart-container h1 {
+.carro-contenedor h1 {
     text-align: center;
     color: #660030;
     font-size: 2.5rem;
     margin-bottom: 30px;
 }
 
-.empty-cart {
+.vacio-carro {
     text-align: center;
     padding: 50px 0;
     background-color: white;
@@ -28,19 +28,19 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.empty-cart i {
+.vacio-carro i {
     font-size: 4rem;
     color: #ccc;
     margin-bottom: 20px;
 }
 
-.empty-cart p {
+.vacio-carro p {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 20px;
 }
 
-.continue-shopping {
+.continuar {
     display: inline-block;
     background-color: #660030;
     color: white;
@@ -51,30 +51,30 @@ body {
     transition: background-color 0.3s;
 }
 
-.continue-shopping:hover {
+.continuar:hover {
     background-color: #880030;
 }
 
-.cart-grid {
+.carro-grid {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 30px;
 }
 
-.cart-items {
+.carro-items {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
 }
 
-.cart-table {
+.carro-tabla {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
 
-.cart-table th {
+.carro-tabla th {
     text-align: left;
     padding: 12px;
     background-color: #f1f1f1;
@@ -82,27 +82,27 @@ body {
     font-weight: 600;
 }
 
-.cart-table td {
+.carro-tabla td {
     padding: 12px;
     border-bottom: 1px solid #eee;
 }
 
-.product-name {
+.producto-nombre {
     font-weight: 500;
 }
 
-.product-price, .product-subtotal {
+.producto-precio, .producto-subtotal {
     color: #666;
 }
 
-.quantity-form select {
+.cualidad-form select {
     padding: 5px 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: white;
 }
 
-.remove-btn {
+.eliminar-boton {
     background: none;
     border: none;
     color: #d9534f;
@@ -111,17 +111,17 @@ body {
     transition: color 0.3s;
 }
 
-.remove-btn:hover {
+.eliminar-boton:hover {
     color: #c9302c;
 }
 
-.cart-actions {
+.carro-acciones {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.empty-cart-btn {
+.vacio-carro-btn {
     background-color: #d9534f;
     color: white;
     border: none;
@@ -134,19 +134,18 @@ body {
     transition: background-color 0.3s;
 }
 
-.empty-cart-btn:hover {
+.vacio-carro-btn:hover {
     background-color: #c9302c;
 }
 
-.cart-summary {
+.carro-resumen {
     background-color: #f8f8f8;
     padding: 20px;
     border-radius: 8px;
     margin: 20px 0;
     clear: both;
 }
-
-.cart-summary h2 {
+.carro-resumen h2 {
     color: #660030;
     margin-top: 0;
     margin-bottom: 20px;
@@ -154,14 +153,14 @@ body {
     border-bottom: 1px solid #eee;
 }
 
-.summary-row {
+.resumen-row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
     font-size: 1.1rem;
 }
 
-.summary-row.total {
+.resumen-row.total {
     font-weight: bold;
     font-size: 1.3rem;
     margin-top: 20px;
@@ -169,7 +168,7 @@ body {
     border-top: 1px solid #eee;
 }
 
-.checkout-btn {
+.generar-boton {
     background-color: #660030;
     color: white;
     border: none;
@@ -186,7 +185,7 @@ body {
     transition: background-color 0.3s;
 }
 
-.checkout-btn:hover {
+.generar-boton:hover {
     background-color: #880030;
 }
 
@@ -217,57 +216,57 @@ body {
 }
 
 @media (max-width: 770px) {
-    .cart-grid {
+    .carro-grid {
         grid-template-columns: 1fr;
         gap: 20px;
         justify-content: center;
     }
 
-    .cart-container h1 {
+    .carro-contenedor h1 {
         font-size: 2rem;
     }
 
-    .cart-table {
+    .carro-tabla {
         font-size: 0.9rem;
     }
 
-    .cart-table th:nth-child(2), 
-    .cart-table td:nth-child(2) {
+    .carro-tabla th:nth-child(2), 
+    .carro-tabla td:nth-child(2) {
         display: none;
     }
 
-    .summary-row {
+    .resumen-row {
         font-size: 1rem;
     }
 
-    .summary-row.total {
+    .resumen-row.total {
         font-size: 1.2rem;
     }
 
-    .continue-shopping{
+    .continuar{
         width: 50%;
     }
-    .empty-cart-btn,
-    .checkout-btn {
+    .vacio-carro-btn,
+    .generar-boton{
         width: 100%;
     }
 
-    .cart-summary {
+    .carro-resumen {
         margin-top: 20px;
         padding: 75px;
     }
 }
 
 @media (max-width: 425px) {
-    .cart-container {
+    .carro-contenedor {
         padding: 0 10px;
     }
 
-    .cart-container h1 {
+    .carro-contenedor h1 {
         font-size: 1.8rem;
     }
 
-    .cart-items {
+    .carro-items{
         padding: 80px;
     }
 

@@ -122,12 +122,12 @@ $total = $subtotal + $envio;
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="logo-container">
+            <div class="logo">
                 <img src="../anexos/imagenes/havcanalogo.png" alt="HAVCANA Logo">
                 <a href="info.php" class="brand-name">HAVCANA</a>
             </div>
 
-            <button class="hamburger">
+            <button class="hambur">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -142,10 +142,10 @@ $total = $subtotal + $envio;
                     <li><a href="info.php">Sobre Nosotros</a></li>
                     <li><a href="contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
-                        <li class="user-info">
+                        <li class="usuario-info">
                             <a href="auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
-                                <span class="admin-badge">Admin</span>
+                                <span class="admin-color">Admin</span>
                             <?php endif; ?>
                             <a href="auth/salir.php">|  |   Cerrar Sesión</a>
                         </li>
@@ -157,19 +157,19 @@ $total = $subtotal + $envio;
         </div>
     </header>
 
-    <main class="cart-container">
+    <main class="carro-contenedor">
         <h1>Tu Carrito de Compras</h1>
 
         <?php if (empty($_SESSION['carrito'])): ?>
-        <div class="empty-cart">
+        <div class="vacio-carro">
             <i class="fas fa-shopping-cart"></i>
             <p>Tu carrito está vacío</p>
-            <a href="catalogo.php" class="continue-shopping">Ir al catálogo</a>
+            <a href="catalogo.php" class="continuar">Ir al catálogo</a>
         </div>
         <?php else: ?>
-        <div class="cart-grid">
-            <div class="cart-items">
-                <table class="cart-table">
+        <div class="carro-grid">
+            <div class="carro-items">
+                <table class="carro-tabla">
                     <thead>
                         <tr>
                             <th>Producto</th>
@@ -182,15 +182,15 @@ $total = $subtotal + $envio;
                     <tbody>
                         <?php foreach ($_SESSION['carrito'] as $index => $item): ?>
                         <tr>
-                            <td class="product-name">
+                            <td class="producto-nombre">
                                 <?php echo $item['nombre']; ?>
                                 <?php if ($item['cantidad'] >= 12): ?>
-                                    <span class="discount-badge">¡Precio especial por docena!</span>
+                                    <span class="descuento">¡Precio especial por docena!</span>
                                 <?php endif; ?>
                             </td>
-                            <td class="product-price">$<?php echo number_format($item['precio'], 2); ?></td>
-                            <td class="product-quantity">
-                                <form action="carrito.php" method="POST" class="quantity-form">
+                            <td class="producto-precio">$<?php echo number_format($item['precio'], 2); ?></td>
+                            <td class="producto-cualidad">
+                                <form action="carrito.php" method="POST" class="cualdiad-form">
                                     <input type="hidden" name="accion" value="actualizar">
                                     <input type="hidden" name="item_index" value="<?php echo $index; ?>">
                                     <select name="cantidad" onchange="this.form.submit()">
@@ -203,12 +203,12 @@ $total = $subtotal + $envio;
                                     </select>
                                 </form>
                             </td>
-                            <td class="product-subtotal">$<?php echo number_format($item['precio'] * $item['cantidad'], 2); ?></td>
-                            <td class="product-actions">
+                            <td class="producto-subtotal">$<?php echo number_format($item['precio'] * $item['cantidad'], 2); ?></td>
+                            <td class="producto-acciones">
                                 <form action="carrito.php" method="POST">
                                     <input type="hidden" name="accion" value="eliminar">
                                     <input type="hidden" name="item_index" value="<?php echo $index; ?>">
-                                    <button type="submit" class="remove-btn">
+                                    <button type="submit" class="eliminar-boton">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </form>
@@ -218,34 +218,34 @@ $total = $subtotal + $envio;
                     </tbody>
                 </table>
 
-                <div class="cart-actions">
-                    <a href="catalogo.php" class="continue-shopping">
+                <div class="carro-acciones">
+                    <a href="catalogo.php" class="continuar">
                         <i class="fas fa-arrow-left"></i> Seguir comprando
                     </a>
                     <form action="carrito.php" method="POST">
                         <input type="hidden" name="accion" value="vaciar">
-                        <button type="submit" class="empty-cart-btn">
+                        <button type="submit" class="vacio-carro-btn">
                             <i class="fas fa-trash"></i> Vaciar carrito
                         </button>
                     </form>
                 </div>
             </div>
 
-            <div class="cart-summary">
+            <div class="carro-resumen">
                 <h2>Resumen del pedido</h2>
-                <div class="summary-row">
+                <div class="resumen-row">
                     <span>Subtotal</span>
                     <span>$<?php echo number_format($subtotal, 2); ?></span>
                 </div>
-                <div class="summary-row">
+                <div class="resumen-row">
                     <span>Envío</span>
                     <span>$<?php echo number_format($envio, 2); ?></span>
                 </div>
-                <div class="summary-row total">
+                <div class="resumen-row total">
                     <span>Total</span>
                     <span>$<?php echo number_format($total, 2); ?></span>
                 </div>
-                <button class="checkout-btn" onclick="generarPedido()">
+                <button class="generar-boton" onclick="generarPedido()">
                     Generar Pedido <i class="fas fa-arrow-right"></i>
                 </button>
                 <script>
@@ -265,9 +265,9 @@ $total = $subtotal + $envio;
     </main>
 
     <footer>
-        <div class="whatsapp-button">
+        <div class="whatsapp-boton">
             <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-                <span class="contact-text">Contacto Directo</span>
+                <span class="contactod">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>

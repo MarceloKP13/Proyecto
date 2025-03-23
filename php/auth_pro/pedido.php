@@ -39,10 +39,10 @@ $pedidos = $stmt->get_result();
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="logo-container">
+            <div class="logo">
                 <img src="../../anexos/imagenes/havcanalogo.png" alt="HAVCANA Logo">
                 <a href="../info.php" class="brand-name">HAVCANA</a>
-                <button class="hamburger">
+                <button class="hambur">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -57,10 +57,10 @@ $pedidos = $stmt->get_result();
                     <li><a href="../info.php">Sobre Nosotros</a></li>
                     <li><a href="../contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
-                        <li class="user-info">
+                        <li class="usuario-info">
                             <a href="pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
-                                <span class="admin-badge">Admin</span>
+                                <span class="admin-color">Admin</span>
                             <?php endif; ?>
                             <a href="../auth/salir.php">|  |   Cerrar Sesión</a>
                         </li>
@@ -70,10 +70,10 @@ $pedidos = $stmt->get_result();
         </div>
     </header>
 
-    <div class="pedido-container">
+    <div class="pedido-contenedor">
     <h1>Mis Pedidos</h1>
-    <div class="search-container">
-        <input type="text" id="searchPedidos" placeholder="Buscar pedido..." class="search-input">
+    <div class="buscar-contenedor">
+        <input type="text" id="searchPedidos" placeholder="Buscar pedido..." class="buscar-input">
     </div>
 
     <?php if ($pedidos->num_rows > 0): ?>
@@ -140,7 +140,7 @@ $pedidos = $stmt->get_result();
                     <div class="mensaje-privacidad">
                         <p>Para proteger su información personal y financiera, por favor contacte directamente con nuestro distribuidor para coordinar el pago y la entrega de su pedido.</p>
                         <a href="https://wa.me/+593939339269?text=Hola, quisiera consultar sobre mi pedido <?php echo urlencode($pedido['numero_pedido']); ?>" 
-                           class="whatsapp-button" 
+                           class="whatsapp-boton" 
                            target="_blank">
                             <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
                         </a>
@@ -179,7 +179,7 @@ $pedidos = $stmt->get_result();
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
-            <div class="social-icons">
+            <div class="fredes-sociales">
                 <a href="https://www.facebook.com/havcana8" target="_blank"><img src="../../anexos/imagenes/facebook.png" alt="Facebook"></a>
                 <a href="https://www.instagram.com/havcana8" target="_blank"><img src="../../anexos/imagenes/instagram.png" alt="Instagram"></a>
                 <a href="https://www.x.com/havcana8" target="_blank"><img src="../../anexos/imagenes/x.png" alt="Twitter"></a>

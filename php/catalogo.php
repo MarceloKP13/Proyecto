@@ -21,11 +21,11 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="logo-container">
+            <div class="logo">
                 <img src="../anexos/imagenes/havcanalogo.png" alt="HAVCANA Logo">
                 <a href="info.php" class="brand-name">HAVCANA</a>
             </div>
-            <button class="hamburger">
+            <button class="hambur">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -39,10 +39,10 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <li><a href="info.php">Sobre Nosotros</a></li>
                     <li><a href="contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
-                        <li class="user-info">
+                        <li class="usuario-info">
                             <a href="auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
-                                <span class="admin-badge">Admin</span>
+                                <span class="admin-color">Admin</span>
                             <?php endif; ?>
                             <a href="auth/salir.php">|  |   Cerrar Sesión</a>
                         </li>
@@ -53,32 +53,32 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
             </nav>
         </div>
     </header>
-    <main class="catalog-container">
+    <main class="catalogo-contenedor">
         <h1>Nuestros Vinos</h1>
-        <p class="catalog-intro">Descubre nuestra selección de vinos artesanales elaborados con pasión y dedicación. Cada botella representa nuestra búsqueda por la excelencia y el sabor auténtico.</p>
+        <p class="catalogo-intro">Descubre nuestra selección de vinos artesanales elaborados con pasión y dedicación. Cada botella representa nuestra búsqueda por la excelencia y el sabor auténtico.</p>
 
-        <div class="products-container">
+        <div class="productos">
             <?php foreach ($productos as $producto): ?>
-            <div class="product-card">
-                <div class="product-image">
+            <div class="productos-carta">
+                <div class="productos-imagenes">
                     <img src="<?php echo $producto['imagen']; ?>" alt="<?php echo $producto['nombre']; ?>">
                 </div>
-                <div class="product-info">
+                <div class="productos-info">
                     <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
-                        <form action="auth_pro/actualizar_producto.php" method="POST" class="admin-edit-form" enctype="multipart/form-data">
+                        <form action="auth_pro/actualizar_producto.php" method="POST" class="admin-edit" enctype="multipart/form-data">
                             <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
                             <input type="text" name="nombre" value="<?php echo $producto['nombre']; ?>">
                             <input type="number" step="0.01" name="precio" value="<?php echo $producto['precio']; ?>">
                             <textarea name="descripcion"><?php echo $producto['descripcion']; ?></textarea>
                             <textarea name="maridaje"><?php echo $producto['maridaje']; ?></textarea>
                             <input type="file" name="nueva_imagen">
-                            <button type="submit" class="admin-save-btn">Guardar Cambios</button>
+                            <button type= "submit" class="admin-guardar">Guardar Cambios</button>
                         </form>
                     <?php else: ?>
                         <h2><?php echo $producto['nombre']; ?></h2>
-                        <p class="product-price">$<?php echo number_format($producto['precio'], 2); ?></p>
-                        <p class="product-description"><?php echo $producto['descripcion']; ?></p>
-                        <div class="product-details">
+                        <p class="productos-precio">$<?php echo number_format($producto['precio'], 2); ?></p>
+                        <p class="productos-descripticion"><?php echo $producto['descripcion']; ?></p>
+                        <div class="productos-detalles">
                             <h3>Maridaje recomendado:</h3>
                             <p><?php echo $producto['maridaje']; ?></p>
                         </div>
@@ -86,8 +86,8 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <form action="carrito.php" method="POST">
                         <input type="hidden" name="producto_id" value="<?php echo $producto['id']; ?>">
                         <input type="hidden" name="accion" value="agregar">
-                        <div class="product-actions">
-                            <div class="quantity-selector">
+                        <div class="productos-accion">
+                            <div class="selector">
                                 <label for="cantidad_<?php echo $producto['id']; ?>">Cantidad:</label>
                                 <select name="cantidad" id="cantidad_<?php echo $producto['id']; ?>">
                                     <?php for($i = 1; $i <= 12; $i++): ?>
@@ -102,7 +102,7 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
                                 <?php endfor; ?>
                                 </select>
                             </div>
-                            <button type="submit" class="add-to-cart-btn">Agregar al Carrito</button>
+                            <button type="submit" class="agregar-carrito">Agregar al Carrito</button>
                         </div>
                     </form>
                 </div>
@@ -111,9 +111,9 @@ $productos = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </div>
     </main>
     <footer>
-        <div class="whatsapp-button">
+        <div class="whatsapp-boton">
             <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-                <span class="contact-text">Contacto Directo</span>
+                <span class="contactod">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>

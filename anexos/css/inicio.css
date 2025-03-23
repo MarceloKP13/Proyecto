@@ -6,7 +6,7 @@ body {
     color: #333;
 }
 
-.hero {
+.caja1 {
     background-image: url('../imagenes/hero-bg.jpg');
     background-size: cover;
     background-position: center;
@@ -20,7 +20,7 @@ body {
     margin-top: 70px;
 }
 
-.hero-content {
+.caja1-cont {
     max-width: 800px;
     background-image: url('../imagenes/logoyura.png');
     background-size: contain;
@@ -33,12 +33,12 @@ body {
     transition: transform 0.3s, box-shadow 0.4s;
 }
 
-.hero-content:hover {
+.caja1-cont:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
 }
 
-.hero-content::before {
+.caja1-cont::before {
     content: '';
     position: absolute;
     top: 0;
@@ -49,24 +49,24 @@ body {
     z-index: -1;
 }
 
-.hero-content h1, 
-.hero-content p, 
-.hero-content a {
+.caja1-cont h1, 
+.caja1-cont p, 
+.caja1-cont a {
     position: relative;
     z-index: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.hero-content h1 {
+.caja1-cont h1 {
     color: #ffffff;
 }
 
-.hero-content .tagline {
+.caja1-cont .tagline {
     color: #ffffff;
     font-weight: 400;
 }
 
-.hero-content .description {
+.caja1-cont .description {
     color: #ffffff;
     font-weight: 300;
     background-color: rgba(0, 0, 0, 0.4);
@@ -75,7 +75,7 @@ body {
     margin-bottom: 25px;
 }
 
-.hero h1 {
+.caja1 h1 {
     font-size: 3rem;
     margin-bottom: 10px;
 }
@@ -108,19 +108,19 @@ body {
     background-color: #660024;
 }
 
-.featured-products {
+.productos {
     padding: 60px 20px;
     text-align: center;
     background-color: #f9f9f9;
 }
 
-.featured-products h2 {
+.productos h2 {
     font-size: 2.5rem;
     margin-bottom: 40px;
     color: #660030;
 }
 
-.products-grid {
+.productos-tarjetas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
@@ -128,7 +128,7 @@ body {
     margin: 0 auto;
 }
 
-.product-card {
+.productos-cartas {
     background-color: white;
     border-radius: 8px;
     overflow: hidden;
@@ -136,12 +136,12 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card:hover {
+.productos-cartas:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.product-card img {
+.productos-cartas img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -150,25 +150,25 @@ body {
     transition: all 0.6s ease;
 }
 
-.product-card:hover img {
+.productos-cartas:hover img {
     object-fit: contain;
     height: 280px;
     transform: scale(1.10);
 }
 
-.product-card h3 {
+.productos-cartas h3 {
     color: #660030;
     margin: 15px 0 10px;
 }
 
-.product-card p {
+.productos-cartas p {
     color: #666;
     padding: 0 15px 20px;
     margin: 0;
 }
 
 @media (max-width: 768px) {
-    .hero h1 {
+    .caja1 h1 {
         font-size: 2.5rem;
     }
 
@@ -180,7 +180,7 @@ body {
         font-size: 1rem;
     }
 
-    .products-grid {
+    .productos-tarjetas {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }

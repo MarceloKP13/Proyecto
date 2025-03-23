@@ -9,18 +9,18 @@ body {
 .sin-pedidos p{
     text-align: center;
 }
-.pedido-container {
+.pedido-contenedor {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
 }
 
-.search-container {
+.buscar-contenedor {
     margin-bottom: 20px;
     text-align: center;
 }
 
-.search-input {
+.buscar-input {
     width: 100%;
     max-width: 400px;
     padding: 10px;
@@ -83,7 +83,7 @@ body {
     color: #660030;
 }
 
-.hamburger {
+.hambur {
     display: none;
     background: none;
     border: none;
@@ -91,7 +91,7 @@ body {
     padding: 10px;
 }
 
-.hamburger span {
+.hambur span {
     display: block;
     width: 25px;
     height: 3px;
@@ -99,7 +99,7 @@ body {
     transition: 0.3s;
 }
 
-.whatsapp-button {
+.whatsapp-boton {
     background-color: #25d366;
     color: white;
     text-decoration: none;
@@ -113,27 +113,27 @@ body {
     font-weight: 500;
 }
 
-.whatsapp-button i {
+.whatsapp-boton i {
     font-size: 1.2em;
 }
 
-.whatsapp-button:hover {
+.whatsapp-boton:hover {
     background-color: #128c7e;
     color: white;
     text-decoration: none;
 }
 
 @media (max-width: 900px) {
-    .hamburger {
+    .hambur {
         display: block;
     }
 }
 
 @media (max-width: 500px) {
-        .search-input {
+        .buscar-input {
         width: 90%;
     }
-    .pedido-container {
+    .pedido-contenedor {
             padding: 5px;
         }
     
@@ -154,12 +154,12 @@ body {
             padding: 8px 0;
         }
     
-        .search-input {
+        .buscar-input {
             font-size: 14px;
             padding: 8px;
         }
     
-        .whatsapp-button {
+        .whatsapp-boton {
             width: 90%;
             justify-content: center;
             padding: 12px;

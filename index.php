@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,12 +17,12 @@
 <body>
     <header class="header">
         <div class="header-container">
-            <div class="logo-container">
+            <div class="logo">
                 <img src="anexos/imagenes/havcanalogo.png" alt="HAVCANA Logo">
                 <a href="php/info.php" class="brand-name">HAVCANA</a>
             </div>
 
-            <button class="hamburger">
+            <button class="hambur">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -37,10 +37,10 @@
                     <li><a href="php/info.php">Sobre Nosotros</a></li>
                     <li><a href="php/contactos.php">Contacto</a></li>
                     <?php if(isset($_SESSION['usuario'])): ?>
-                        <li class="user-info">
+                        <li class="usuario-info">
                             <a href="php/auth_pro/pedido.php"><span>Hola, <?php echo $_SESSION['usuario']; ?></span></a>
                             <?php if(isset($_SESSION['es_admin']) && $_SESSION['es_admin']): ?>
-                                <span class="admin-badge">Admin</span>
+                                <span class="admin-color">Admin</span>
                             <?php endif; ?>
                             <a href="php/auth/salir.php">|  |   Cerrar Sesión</a>
                         </li>
@@ -52,8 +52,8 @@
         </div>
     </header>
     
-    <main class="hero">
-        <div class="hero-content">
+    <main class="caja1">
+        <div class="caja1-cont">
             <h1>Descubre HAVCANA</h1>
             <p class="tagline">Vinos artesanales con sabores únicos</p>
             <p class="description">Nuestra pasión por los vinos artesanales nos lleva a crear sabores excepcionales que deleitarán tus sentidos. Elaborados con los mejores ingredientes y un proceso cuidadoso.</p>
@@ -61,15 +61,15 @@
         </div>
     </main>
     
-    <section class="featured-products">
+    <section class="productos">
         <h2>Nuestros Vinos</h2>
-        <div class="products-grid">
+        <div class="productos-tarjetas">
             <?php
             include 'php/auth/conexion_be.php';
             $result = mysqli_query($conexion, "SELECT nombre, descripcion, imagen FROM productos");
             while ($producto = mysqli_fetch_assoc($result)) {
                 $imagen = str_replace('../', '', $producto['imagen']); // Ajustar la ruta para index.php
-                echo '<div class="product-card">';
+                echo '<div class="productos-cartas">';
                 echo '<img src="' . $imagen . '" alt="' . $producto['nombre'] . '">';
                 echo '<h3>' . $producto['nombre'] . '</h3>';
                 echo '<p>' . $producto['descripcion'] . '</p>';
@@ -105,15 +105,15 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
-            <div class="social-icons">
+            <div class="fredes-sociales">
                 <a href="https://www.facebook.com/havcana" target="_blank"><img src="anexos/imagenes/facebook.png" alt="Facebook"></a>
                 <a href="https://www.instagram.com/havcana8" target="_blank"><img src="anexos/imagenes/instagram.png" alt="Instagram"></a>
                 <a href="https://www.x.com/havcana8" target="_blank"><img src="anexos/imagenes/x.png" alt="Twitter"></a>
             </div>
         </div>
-        <div class="whatsapp-button">
+        <div class="whatsapp-boton">
         <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-                <span class="contact-text">Contacto Directo</span>
+                <span class="contactod">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>
         </div>

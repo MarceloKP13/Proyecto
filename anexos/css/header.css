@@ -25,13 +25,13 @@
     padding: 0 20px;
 }
 
-.logo-container {
+.logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo-container img {
+.logo img {
     height: 40px;
     width: auto;
 }
@@ -62,7 +62,7 @@
     color: var(--hover-color);
 }
 
-.hamburger {
+.hambur {
     display: none;
     cursor: pointer;
     background: none;
@@ -70,7 +70,7 @@
     padding: 0;
 }
 
-.hamburger span {
+.hambur span {
     display: block;
     width: 25px;
     height: 3px;
@@ -79,14 +79,14 @@
     transition: all 0.3s ease;
 }
 
-.user-info {
+.usuario-info{
     display: flex;
     align-items: center;
     gap: 5px;
     justify-content: center;
 }
 
-.admin-badge {
+.admin-color {
     background-color: var(--primary-color);
     color: white;
     padding: 2px 8px;
@@ -112,19 +112,19 @@
         display: flex;
     }
 
-    .hamburger {
+    .hambur {
         display: block;
     }
 
-    .hamburger.active span:nth-child(1) {
+    .hambur.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .hamburger.active span:nth-child(2) {
+    .hambur.active span:nth-child(2) {
         opacity: 0;
     }
 
-    .hamburger.active span:nth-child(3) {
+    .hambur.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
 }
@@ -205,18 +205,18 @@ footer {
     flex-direction: column;
 }
 
-.social-icons {
+.fredes-sociales {
     display: flex;
     gap: 15px;
 }
 
-.social-icons a img {
+.fredes-sociales a img {
     width: 30px;
     height: 30px;
     transition: opacity 0.5s;
     border-radius: 50%;
 }
 
-.social-icons a:hover img {
+.fredes-sociales a:hover img {
     opacity: 0.8;
 }
