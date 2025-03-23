@@ -184,13 +184,7 @@ $pedidos = $stmt->get_result();
                 <a href="https://www.instagram.com/havcana8" target="_blank"><img src="../../anexos/imagenes/instagram.png" alt="Instagram"></a>
                 <a href="https://www.x.com/havcana8" target="_blank"><img src="../../anexos/imagenes/x.png" alt="Twitter"></a>
             </div>
-        </div>
-        <div class="whatsapp-button">
-            <a href="https://wa.me/++593939339269" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-                <span class="contact-text">Contacto Directo</span>
-                <i class="fab fa-whatsapp"></i>
-            </a>
-        </div>
+        
     </footer>
 
     <script src="../../anexos/js/menu.js"></script>

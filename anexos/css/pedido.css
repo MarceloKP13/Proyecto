@@ -6,7 +6,9 @@ body {
     color: #333;
     background-color: #f9f9f9;
 }
-
+.sin-pedidos p{
+    text-align: center;
+}
 .pedido-container {
     max-width: 800px;
     margin: 50px auto;
@@ -48,6 +50,10 @@ body {
 .estado-pendiente {
     color: #ff9800;
     font-weight: bold;
+}
+.estado-pendiente:hover{
+    cursor: pointer;
+    color: #006e18;
 }
 
 .productos-pedido {

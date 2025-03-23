@@ -445,23 +445,6 @@ body {
     font-size: 1.05em;
     padding: 10px 0;
 }
-
-.delete-comment {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: #ff4444;
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s;
-}
 }
 
 .comment-header {
@@ -490,7 +473,8 @@ body {
     line-height: 1.8;
     color: #444;
     font-size: 1.05em;
-    text-align: center;
+    text-align:start;
+    margin-left: 240px;
     margin-bottom: 50px;
 }
 
