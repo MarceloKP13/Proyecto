@@ -113,10 +113,9 @@ body {
 }
 
 .story-image img, .values-image img {
-    width: 100%;
+    width: 85%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .story-content h2, 
@@ -132,6 +131,7 @@ body {
 .story-content p, .future-section p {
     line-height: 1.6;
     margin-bottom: 15px;
+    text-align: justify;
 }
 
 .process-section {

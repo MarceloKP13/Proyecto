@@ -55,7 +55,7 @@ session_start();
         <section class="hero-section">
             <div class="hero-content">
                 <h1>Nuestra Historia</h1>
-                <p>Conoce más sobre HAVCANA y nuestra pasión por los vinos artesanales</p>
+                <p>Conoce más sobre HAVCANA y nuestra historia.</p>
             </div>
         </section>
 
