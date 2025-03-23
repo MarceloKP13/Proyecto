@@ -12,7 +12,7 @@ body {
 
 .hero-section {
     background-image: url('../imagenes/contactosfondo.png');
-    background-size: cover;
+    background-size: auto;
     background-position: center;
     height: 300px;
     display: flex;
@@ -208,6 +208,7 @@ body {
     max-width: 800px;
     margin: 60px auto;
     padding: 0 20px;
+    text-align: justify;
 }
 
 .faq-section h2 {
@@ -461,10 +462,6 @@ body {
     justify-content: center;
     transition: background-color 0.2s;
 }
-
-.delete-comment:hover {
-    background: #cc0000;
-} 0.1);
 }
 
 .comment-header {
