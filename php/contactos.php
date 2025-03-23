@@ -24,6 +24,8 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
     <link rel="stylesheet" href="../anexos/css/contactos.css">
 </head>
 <body>
+</head>
+<body>
     <header class="header">
         <div class="header-container">
             <div class="logo">
@@ -309,7 +311,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
                 <a href="https://www.x.com/havcana8" target="_blank"><img src="../anexos/imagenes/x.png" alt="Twitter"></a>
             </div>
         </div>
-        <div class="whatsapp-button">
+        <div class="whatsapp-boton">
             <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contactod">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>

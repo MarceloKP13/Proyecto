@@ -89,11 +89,11 @@
                 <h3>Enlaces</h3>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="php/catalogo.php">Catálogo</a></li>
-                    <li><a href="php/carrito.php">Carrito</a></li>
-                    <li><a href="php/auth_pro/pedido.php">Pedidos</a></li>
-                    <li><a href="php/info.php">Sobre Nosotros</a></li>
-                    <li><a href="php/contactos.php">Contacto</a></li>
+                    <li><a href="../php/catalogo.php">Catálogo</a></li>
+                    <li><a href="../php/carrito.php">Carrito</a></li>
+                    <li><a href="../php/auth_pro/pedido.php">Pedidos</a></li>
+                    <li><a href="../php/info.php">Sobre Nosotros</a></li>
+                    <li><a href="../php/contactos.php">Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -106,13 +106,13 @@
         <div class="footer-bottom">
             <p>&copy; 2025 HAVCANA. Todos los derechos reservados.</p>
             <div class="fredes-sociales">
-                <a href="https://www.facebook.com/havcana" target="_blank"><img src="anexos/imagenes/facebook.png" alt="Facebook"></a>
+                <a href="https://www.facebook.com/havcana8" target="_blank"><img src="anexos/imagenes/facebook.png" alt="Facebook"></a>
                 <a href="https://www.instagram.com/havcana8" target="_blank"><img src="anexos/imagenes/instagram.png" alt="Instagram"></a>
                 <a href="https://www.x.com/havcana8" target="_blank"><img src="anexos/imagenes/x.png" alt="Twitter"></a>
             </div>
         </div>
         <div class="whatsapp-boton">
-        <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+            <a href="https://wa.me/+593939339269?text=Hola, necesito información sobre sus productos." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <span class="contactod">Contacto Directo</span>
                 <i class="fab fa-whatsapp"></i>
             </a>
