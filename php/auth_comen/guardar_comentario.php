@@ -15,19 +15,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    $comentario = mysqli_real_escape_string($conexion, $_POST['comentario']);
+    try {
+        $stmt = $conexion->prepare("INSERT INTO comentarios (usuario_id, comentario) VALUES (?, ?)");
+        $stmt->execute([$usuario_id, $_POST['comentario']]);
 
-    $sql = "INSERT INTO comentarios (usuario_id, comentario) VALUES ('$usuario_id', '$comentario')";
-
-    if (mysqli_query($conexion, $sql)) {
         echo "<script>alert('Gracias por tu comentario, será tomado en cuenta.'); window.location.href='../contactos.php';</script>";
-    } else {
-        echo "Error al guardar el comentario: " . mysqli_error($conexion);
+    } catch (PDOException $e) {
+        die("Error al guardar el comentario: " . $e->getMessage());
     }
 }
-
-mysqli_close($conexion);
 ?>
+
 <?php
 require_once 'conexion_com.php';
 
@@ -37,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $comentario = $_POST['comentario'];
 
     try {
-        $stmt = $pdo->prepare("INSERT INTO comentarios (nombre, tipo_comentario, comentario) VALUES (?, ?, ?)");
+        $stmt = $conexion->prepare("INSERT INTO comentarios (nombre, tipo_comentario, comentario) VALUES (?, ?, ?)");
         $stmt->execute([$nombre, $tipo, $comentario]);
         
         header('Location: ../contactos.php?comentario_enviado=true');
@@ -47,3 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
