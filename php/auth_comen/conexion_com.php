@@ -1,14 +1,8 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "havcana_db");
-if (!$conexion) {
-    die("Error de conexión: " . mysqli_connect_error());
-}
-?>
-<?php
-$host = 'localhost';
-$dbname = 'havcana_db';
-$username = 'root';
-$password = '';
+$host = 'sql108.epizy.com';
+$dbname = 'if0_38584302_havcana_db';
+$username = 'if0_38584302';
+$password = 'u5x0DWHfc6l';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
