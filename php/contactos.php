@@ -215,7 +215,7 @@ $comentario_enviado = isset($_GET['comentario_enviado']) && $_GET['comentario_en
             <h2>Comentarios y Sugerencias</h2>
             <p class="comments-intro">Valoramos tu opinión y estamos siempre buscando mejorar. Comparte tus comentarios, sugerencias o ideas con nosotros.</p>
 
-            <?php if ($comentario_enviado): ?>
+            <?php if (isset($_GET['comentario_enviado']) && $_GET['comentario_enviado'] == 'true'): ?>
                 <div class="gracias-mensaje">
                     <i class="fas fa-check-circle"></i>
                     <p>¡Gracias por tu comentario! Lo tendremos en cuenta para seguir mejorando.</p>
